@@ -1,4 +1,50 @@
+/* ============================================================
+   FOOTER.JS - HEADER + FOLDER MENU + BOTTOM NAV
+============================================================ */
+document.addEventListener("DOMContentLoaded", () => {
 
+  /* =======================
+     1) إدراج الهيدر
+  ======================= */
+  if (!document.querySelector("header.header")) {
+    const headerHTML = `
+      <header class="header">
+        <div class="header-inner">
+          <a class="brand" href="../AB/index.html">
+            <div class="logo">
+              <img src="/icons/ai-icon.png" alt="AI Icon">
+            </div>
+            <span class="brand-title">FR Webs</span>
+          </a>
+          <div class="header-actions">
+            <!-- زر المجلد -->
+            <button id="menuToggle" class="btn-icon" aria-label="القائمة">🗂</button>
+          </div>
+        </div>
+      </header>
+    `;
+    document.body.insertAdjacentHTML("afterbegin", headerHTML);
+  }
+
+  /* =======================
+     2) إدراج قائمة المجلد
+  ======================= */
+  if (!document.getElementById("folderMenu")) {
+    const folderMenuHTML = `
+      <nav id="folderMenu" class="folder-menu">
+        <a href="/FR/index.html">
+          <i class="fa-solid fa-briefcase"></i> خدمات
+        </a>
+        <a href="/dev-english/index.html">
+          <i class="fa-solid fa-language"></i> الإنجليزية
+        </a>
+        <a href="/ish/index.html">
+          <i class="fa-solid fa-graduation-cap"></i> كورسات
+        </a>
+      </nav>
+    `;
+    document.body.insertAdjacentHTML("afterbegin", folderMenuHTML);
+  }
 const modal = document.getElementById("paymentModal");
 const status = document.getElementById("payStatus");
 
