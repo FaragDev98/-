@@ -1,117 +1,102 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>FR Webs — تعليم البرمجة</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <meta name="description" content="FR Webs — دروس برمجة، تصميم جرافيك، ومونتاج فيديو بطريقة بسيطة للمبتدئين." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FR Webs — الكورس</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
 
-    <main class="container">
-        <section class="hero animate">
-            <div class="hero-inner">
-                <div class="hero-text">
-                    <h1>ابدأ رحلتك في تعلم البرمجة</h1>
-                    <p>دروس عملية، مشاريع جاهزة، وأدوات بسيطة لأي مبتدئ. تعلّم بسرعة وابدأ العمل الحر.</p>
-                    
-                    <div class="video-container">
-                        <iframe width="100%" height="315"
-                            src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                            title="YouTube video" frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- ====== الهيرو ====== -->
+<section class="hero">
+  <h1>ابدأ رحلتك في البرمجة</h1>
+  <p>تعلم من الصفر وابدأ تحقق دخل من الإنترنت</p>
 
-        <section class="features">
-            <h2>هتتعلم ايه في الكورس؟</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-code"></i>
-                    <h3>تصميم مواقع</h3>
-                    <p>تعلم HTML و CSS و JavaScript من الصفر</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>شغل من الموبايل</h3>
-                    <p>اشتغل وابدأ مشروعك من موبايلك بس</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <h3>ربح من الانترنت</h3>
-                    <p>ازاي تحول مهارتك لدخل حقيقي</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-rocket"></i>
-                    <h3>إطلاق مشروعك</h3>
-                    <p>تنشر موقعك وتبدأ تجيب عملاء</p>
-                </div>
-            </div>
-        </section>
+  <!-- فيديو تعريفي -->
+  <div class="video-box">
+    <iframe src="https://www.youtube.com/embed/04fbjvVF7Cw" allowfullscreen></iframe>
+  </div>
 
-        <section class="price">
-            <h2>ابدأ دلوقتي</h2>
-            <p class="price-number">50 جنيه فقط</p>
-            <button class="btn buy-btn" data-service="كورس البرمجة الشامل" data-price="50">اشترك الآن ودفع</button>
-        </section>
+  <!-- زر الشراء -->
+  <button class="buy-btn"
+    data-service="كورس البرمجة الكامل"
+    data-price="50">
+    اشترك الآن
+  </button>
+</section>
 
-        <section class="about">
-            <h2>مين أنا؟</h2>
-            <p>أنا فراج عبدالله، مطور مواقع ومؤسس FR Webs. بساعدك تبدأ من الصفر لحد ما تحقق أول دخل من الإنترنت.</p>
-        </section>
-    </main>
+<!-- ====== فيديوهات الكورس ====== -->
+<section class="videos">
+  <h2>محتوى الكورس</h2>
 
-    <div class="payment-modal" id="paymentModal">
-        <div class="payment-box">
-            <div class="modal-header">
-                <h3>إتمام الدفع</h3>
-                <span class="close-x" onclick="closePayment()">✖</span>
-            </div>
-            <p id="serviceTitle" style="font-weight: bold; color: var(--purple);"></p>
-            
-            <h4>اختر طريقة الدفع</h4>
-            <div class="methods">
-                <div class="pay-item" data-method="فودافون كاش">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Vodafone_Logo.png" alt="vodafone" style="width:30px">
-                    <h4>فودافون كاش</h4>
-                </div>
-                <div class="pay-item" data-method="أورنج كاش">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Orange_logo.svg" alt="orange" style="width:30px">
-                    <h4>أورنج كاش</h4>
-                </div>
-                <div class="pay-item" data-method="وي كاش">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Telecom_Egypt_Logo.svg" alt="we" style="width:30px">
-                    <h4>وي كاش</h4>
-                </div>
-                <div class="pay-item" data-method="PayPal">
-                    <i class="fab fa-paypal" style="font-size:30px; color:#003087"></i>
-                    <h4>PayPal</h4>
-                </div>
-            </div>
+  <div class="video-list">
 
-            <div id="normalPayment">
-                <p class="guide">📌 انسخ الرقم ← ابعت الفلوس ← خد Screenshot ← ارفعه هنا</p>
-                <input type="text" id="payNumber" readonly placeholder="رقم التحويل يظهر هنا">
-                <button id="copyBtn">📋 نسخ الرقم</button>
-                <input type="text" id="userNumber" placeholder="رقمك اللي حولت منه">
-                <input type="file" id="payProof" accept="image/*">
-            </div>
-
-            <div id="paypalPayment" style="display:none;">
-                <p class="guide">💳 سيتم توجيهك لحساب PayPal</p>
-            </div>
-
-            <button id="confirmBtn">تأكيد الدفع</button>
-            <p id="payStatus" style="margin-top:10px; font-size:14px;"></p>
-        </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/04fbjvVF7Cw"></iframe>
+      <p>الدرس 1 - مقدمة</p>
     </div>
 
-    <script src="footer.js"></script>
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/04fbjvVF7Cw"></iframe>
+      <p>الدرس 2 - HTML</p>
+    </div>
+
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/04fbjvVF7Cw"></iframe>
+      <p>الدرس 3 - CSS</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====== المميزات ====== -->
+<section class="features">
+  <h2>هتتعلم ايه؟</h2>
+
+  <div class="grid">
+    <div>💻 تصميم مواقع</div>
+    <div>📱 شغل بالموبايل</div>
+    <div>💰 ربح من الإنترنت</div>
+    <div>🚀 تبدأ مشروعك</div>
+  </div>
+</section>
+
+<!-- ====== الدفع ====== -->
+<div class="payment-modal" id="paymentModal">
+
+  <div class="payment-box">
+
+    <span class="close" onclick="closePayment()">✖</span>
+
+    <h3 id="serviceTitle"></h3>
+
+    <div class="methods">
+
+      <div class="pay-item" data-method="فودافون كاش">فودافون كاش</div>
+      <div class="pay-item" data-method="أورنج كاش">أورنج كاش</div>
+      <div class="pay-item" data-method="وي كاش">وي كاش</div>
+      <div class="pay-item" data-method="PayPal">PayPal</div>
+
+    </div>
+
+    <input id="userNumber" placeholder="رقمك">
+    <input type="file" id="payProof">
+
+    <button id="confirmBtn">تأكيد الدفع</button>
+
+    <p id="payStatus"></p>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
