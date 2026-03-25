@@ -1,3 +1,41 @@
+
+const modal = document.getElementById("paymentModal");
+const status = document.getElementById("payStatus");
+
+let selectedMethod = "";
+
+// فتح الدفع
+document.querySelector(".buy-btn").onclick = () => {
+  modal.classList.add("active");
+};
+
+// قفل
+function closePayment(){
+  modal.classList.remove("active");
+}
+
+// اختيار طريقة
+document.querySelectorAll(".pay-item").forEach(item=>{
+  item.onclick = ()=>{
+    selectedMethod = item.dataset.method;
+    status.innerHTML = "تم اختيار: " + selectedMethod;
+  };
+});
+
+// تأكيد
+document.getElementById("confirmBtn").onclick = ()=>{
+
+  if(!selectedMethod){
+    status.innerHTML = "اختار طريقة الدفع";
+    return;
+  }
+
+  status.innerHTML = "تم الطلب بنجاح";
+
+  window.open("https://wa.me/201066047545","_blank");
+};
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById('paymentModal');
     const payStatus = document.getElementById('payStatus');
