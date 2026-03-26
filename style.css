@@ -93,30 +93,6 @@ body{
   box-shadow:0 10px 20px rgba(0,0,0,.1);
 }
 
-/* ================= POPUP ================= */
-.popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  justify-content:center;
-  align-items:center;
-}
-
-.popup-box{
-  background:#fff;
-  padding:20px;
-  border-radius:15px;
-  width:90%;
-  max-width:350px;
-  text-align:center;
-}
-
-.close{
-  cursor:pointer;
-  float:left;
-}
-
 /* ===================== المودال (الخلفية) ===================== */
 .payment-modal{
   display:none;
