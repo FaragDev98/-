@@ -1,3 +1,32 @@
+
+!-- سكربت يوتيوب -->
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<!-- سكربت التشغيل -->
+<script>
+  function loadYouTubeButton() {
+    const container = document.getElementById("yt-subscribe");
+
+    container.innerHTML = `
+      <div class="g-ytsubscribe"
+           data-channel="FRWEBS"
+           data-layout="full"
+           data-theme="dark"
+           data-count="default">
+      </div>
+    `;
+
+    // إعادة تحميل الزر
+    if (window.gapi) {
+      window.gapi.ytsubscribe.go();
+    }
+  }
+
+  window.onload = loadYouTubeButton;
+</script>
+
+
+
 let currentService="";
 let currentPrice="";
 
