@@ -117,21 +117,88 @@ body{
   float:left;
 }
 
-/* ================= PAYMENT ================= */
-.payment{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  justify-content:center;
-  align-items:center;
+/* ===================== طرق الدفع ===================== */
+.methods{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin:15px 0;
 }
 
-.payment-box{
-  background:#fff;
-  padding:20px;
-  border-radius:15px;
-  width:90%;
-  max-width:300px;
+/* كارت كل طريقة دفع */
+.pay-item{
+  border:1px solid #ddd;
+  border-radius:14px;
+  padding:12px;
   text-align:center;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* أيقونة الدفع */
+.pay-item img{
+  width:40px;
+  margin-bottom:6px;
+}
+
+/* اسم الطريقة */
+.pay-item h4{
+  font-size:14px;
+  margin:4px 0;
+}
+
+/* الرقم */
+.pay-item strong{
+  font-size:13px;
+  color:#16a34a;
+}
+
+/* عند الاختيار */
+.pay-item.selected{
+  border:2px solid #22c55e;
+  background:#ecfdf5;
+  transform:scale(1.03);
+}
+
+
+/* ===================== التعليمات ===================== */
+.guide{
+  font-size:14px;
+  margin:10px 0;
+  color:#555;
+}
+
+
+/* ===================== المدخلات ===================== */
+input{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:12px;
+  border:1px solid #ccc;
+  font-size:1rem;
+}
+
+
+/* ===================== زر النسخ ===================== */
+#copyBtn{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  border:none;
+  background:#2563eb;
+  color:#fff;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* ===================== زر التأكيد ===================== */
+#confirmBtn{
+  width:100%;
+  padding:14px;
+  background:#22c55e;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
 }
