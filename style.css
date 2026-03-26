@@ -66,8 +66,8 @@ body{
 
 /* الأيقونات */
 .social-icons img{
-  width:10px;
-  height:10px;
+  width:20px;
+  height:20px;
   filter:invert(100%);
 }
 
@@ -106,6 +106,23 @@ body{
 /* عند التفعيل */
 .payment-modal.active{
   display:flex;
+}
+
+/* الصندوق - حجم متجاوب مع الشاشة */
+.payment-box{
+  background:#ffffff;
+  width:90%;              /* ياخد 90% من عرض الشاشة */
+  max-width:380px;        /* لا يزيد عن 380px على الشاشات الكبيرة */
+  max-height:80vh;        /* ارتفاع أقصى 80% من ارتفاع الشاشة */
+  padding:18px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+  transform:translateY(30px);
+  transition:.3s ease;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  overflow-y:auto;        /* لو المحتوى طويل يظهر شريط تمرير */
 }
 
 
