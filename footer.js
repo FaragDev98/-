@@ -1,27 +1,22 @@
 // ================= زر الاشتراك =================
+document.querySelectorAll(".follow-btn").forEach(btn => {
 
-// نحط الزر بعد تحميل الصفحة
-window.onload = function () {
+  btn.addEventListener("click", function(e){
 
-  const container = document.getElementById("yt-subscribe");
+    e.preventDefault(); // يمنع فتح الرابط
 
-  // مهم: استخدمنا اسم القناة
-  container.innerHTML = `
-    <div class="g-ytsubscribe"
-         data-channel="FRWEBS"
-         data-layout="full"
-         data-theme="dark"
-         data-count="default">
-    </div>
-  `;
+    // تغيير الشكل
+    this.classList.add("done");
+    this.querySelector("span").innerText = "✔ تم";
 
-  // إعادة تحميل زر يوتيوب
-  if (window.gapi) {
-    window.gapi.ytsubscribe.go();
-  }
+    // فتح الرابط بعد ثانية (اختياري)
+    setTimeout(()=>{
+      window.open(this.href, "_blank");
+    },1000);
 
-};
+  });
 
+});
 
 // ================= الشراء =================
 
