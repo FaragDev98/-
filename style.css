@@ -117,6 +117,22 @@ body{
   float:left;
 }
 
+/* ===================== المودال (الخلفية) ===================== */
+.payment-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  justify-content:center;
+  align-items:center;
+}
+
+/* عند التفعيل */
+.payment-modal.active{
+  display:flex;
+}
+
+
 /* ===================== طرق الدفع ===================== */
 .methods{
   display:grid;
