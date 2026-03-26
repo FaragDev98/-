@@ -1,3 +1,13 @@
+
+function openAbout() {
+  document.getElementById("aboutBox").style.display = "flex";
+}
+
+function closeAbout() {
+  document.getElementById("aboutBox").style.display = "none";
+}
+
+
 // ================= زر الاشتراك =================
 // أزرار السوشيال العامة
 document.querySelectorAll(".social-btn").forEach(btn=>{
