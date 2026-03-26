@@ -35,6 +35,18 @@ body{
   font-weight: bold;
 }
 
+/* زر */
+.about-btn {
+  background: red;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
 /* الخلفية */
 .about-popup {
   position: fixed;
