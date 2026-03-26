@@ -1,90 +1,93 @@
+/* شكل عام */
 body{
-margin:0;
-font-family:cairo;
-background:#f3f4f6;
+  margin:0;
+  font-family:cairo;
+  background:#f3f4f6;
 }
 
+/* ================= الفيديو ================= */
 .video-box{
-position:relative;
-width:100%;
-max-width:420px;
-margin:auto;
-padding-top:56.25%;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.3);
+  position:relative;
+  width:100%;
+  max-width:420px;
+  margin:auto;
+  padding-top:56.25%;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
 .video-box iframe{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-border:none;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:none;
 }
 
-.subscribe-box {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
+/* زر الاشتراك */
+.subscribe-box{
+  margin-top:15px;
+  display:flex;
+  justify-content:center;
 }
 
-/* خدمات */
+/* ================= الخدمات ================= */
 .services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
 }
 
 .card{
-background:#fff;
-padding:20px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 10px 20px rgba(0,0,0,.1);
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,.1);
 }
 
-/* POPUP */
+/* ================= POPUP ================= */
 .popup{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.6);
-justify-content:center;
-align-items:center;
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  justify-content:center;
+  align-items:center;
 }
 
 .popup-box{
-background:#fff;
-padding:20px;
-border-radius:15px;
-width:90%;
-max-width:350px;
-text-align:center;
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  width:90%;
+  max-width:350px;
+  text-align:center;
 }
 
 .close{
-cursor:pointer;
-float:left;
+  cursor:pointer;
+  float:left;
 }
 
-/* PAYMENT */
+/* ================= PAYMENT ================= */
 .payment{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.6);
-justify-content:center;
-align-items:center;
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  justify-content:center;
+  align-items:center;
 }
 
 .payment-box{
-background:#fff;
-padding:20px;
-border-radius:15px;
-width:90%;
-max-width:300px;
-text-align:center;
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  width:90%;
+  max-width:300px;
+  text-align:center;
 }
