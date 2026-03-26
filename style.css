@@ -24,11 +24,11 @@ height:100%;
 border:none;
 }
 
-/* زر الاشتراك */
-.subscribe-box{
-margin-top:15px;
+.subscribe-box {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
 }
-
 
 /* خدمات */
 .services{
