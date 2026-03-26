@@ -1,31 +1,29 @@
+// ================= زر الاشتراك =================
 
-!-- سكربت يوتيوب -->
-<script src="https://apis.google.com/js/platform.js"></script>
+// نحط الزر بعد تحميل الصفحة
+window.onload = function () {
 
-<!-- سكربت التشغيل -->
-<script>
-  function loadYouTubeButton() {
-    const container = document.getElementById("yt-subscribe");
+  const container = document.getElementById("yt-subscribe");
 
-    container.innerHTML = `
-      <div class="g-ytsubscribe"
-           data-channel="FRWEBS"
-           data-layout="full"
-           data-theme="dark"
-           data-count="default">
-      </div>
-    `;
+  // مهم: استخدمنا اسم القناة
+  container.innerHTML = `
+    <div class="g-ytsubscribe"
+         data-channel="FRWEBS"
+         data-layout="full"
+         data-theme="dark"
+         data-count="default">
+    </div>
+  `;
 
-    // إعادة تحميل الزر
-    if (window.gapi) {
-      window.gapi.ytsubscribe.go();
-    }
+  // إعادة تحميل زر يوتيوب
+  if (window.gapi) {
+    window.gapi.ytsubscribe.go();
   }
 
-  window.onload = loadYouTubeButton;
-</script>
+};
 
 
+// ================= الشراء =================
 
 let currentService="";
 let currentPrice="";
@@ -33,41 +31,45 @@ let currentPrice="";
 const popup=document.getElementById("popup");
 const payment=document.getElementById("payment");
 
+// لما المستخدم يضغط شراء
 document.querySelectorAll(".buy-btn").forEach(btn=>{
-btn.onclick=()=>{
+  btn.onclick=()=>{
 
-currentService=btn.dataset.service;
-currentPrice=btn.dataset.price;
+    currentService=btn.dataset.service;
+    currentPrice=btn.dataset.price;
 
-popup.style.display="flex";
+    popup.style.display="flex";
 
-document.getElementById("title").innerText=currentService;
+    document.getElementById("title").innerText=currentService;
 
-document.getElementById("desc").innerText=
-"🔥 عرض محدود\n\nالسعر: "+currentPrice+" جنيه\n\nابدأ دلوقتي واشتغل من البيت 💰";
+    document.getElementById("desc").innerText=
+    "🔥 عرض محدود\n\nالسعر: "+currentPrice+" جنيه\n\nابدأ دلوقتي 💰";
 
-};
+  };
 });
 
+// قفل البوب
 function closePopup(){
-popup.style.display="none";
+  popup.style.display="none";
 }
 
+// فتح الدفع
 function openPayment(){
-popup.style.display="none";
-payment.style.display="flex";
+  popup.style.display="none";
+  payment.style.display="flex";
 
-document.getElementById("payTitle").innerText=
-currentService+" - "+currentPrice+" جنيه";
+  document.getElementById("payTitle").innerText=
+  currentService+" - "+currentPrice+" جنيه";
 }
 
+// تنفيذ الدفع (واتساب)
 function pay(){
 
-alert("تم الطلب ✅\nسيتم التواصل معك");
+  alert("تم الطلب ✅");
 
-window.open(
-"https://wa.me/201066047545?text=طلب "+currentService,
-"_blank"
-);
+  window.open(
+    "https://wa.me/201066047545?text=طلب "+currentService,
+    "_blank"
+  );
 
 }
