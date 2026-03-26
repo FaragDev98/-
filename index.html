@@ -3,113 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>FR Webs</title>
 
+<!-- ربط ملف CSS -->
 <link rel="stylesheet" href="style.css">
+
+<!-- أيقونات -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
-<!-- HERO -->
+
+<!-- ================= HERO (الفيديو + الاشتراك) ================= -->
 <section class="hero">
-<!-- سكربت مهم جدا -->
-<script src="https://apis.google.com/js/platform.js"></script>
-<div class="hero-img">
 
-<div class="video-box">
-
-<iframe 
-src="https://www.youtube.com/embed/Q7lK-mSIP24"
-title="YouTube video"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen>
-</iframe>
-
-</div>
-</div>
-
-  <div class="hero-text">
-
-  <!-- زر الاشتراك -->
-  <div class="subscribe-box">
-    <div id="yt-subscribe"></div>
+  <!-- الفيديو -->
+  <div class="hero-img">
+    <div class="video-box">
+      <iframe 
+        src="https://www.youtube.com/embed/Q7lK-mSIP24"
+        title="YouTube video"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
 
-</div>
+  <!-- النص + زر الاشتراك -->
+  <div class="hero-text">
+
+    <!-- زر الاشتراك -->
+    <div class="subscribe-box">
+      <div id="yt-subscribe"></div>
+    </div>
+
+  </div>
 
 </section>
 
-<!-- الخدمات -->
+
+<!-- ================= الخدمات ================= -->
 <section class="services">
 
-<div class="card">
-<h2>🔥 كورس FR Webs</h2>
-<p>تعلم تصميم مواقع + Freelance</p>
+  <div class="card">
+    <h2>🔥 كورس FR Webs</h2>
+    <p>تعلم تصميم مواقع + Freelance</p>
+    <button class="buy-btn" data-service="كورس FR Webs" data-price="200">
+      شراء الآن
+    </button>
+  </div>
 
-<button class="buy-btn" data-service="كورس FR Webs" data-price="200">
-شراء الآن
-</button>
-</div>
+  <div class="card">
+    <h2>📘 كتاب HTML</h2>
+    <p>تعلم HTML من الصفر</p>
+    <button class="buy-btn" data-service="كتاب HTML" data-price="100">
+      شراء الآن
+    </button>
+  </div>
 
-<div class="card">
-<h2>📘 كتاب HTML</h2>
-<p>تعلم HTML من الصفر</p>
-
-<button class="buy-btn" data-service="كتاب HTML" data-price="100">
-شراء الآن
-</button>
-</div>
-
-<div class="card">
-<h2>💻 موقع جاهز</h2>
-<p>نصمم لك موقع احترافي</p>
-
-<button class="buy-btn" data-service="موقع كامل" data-price="1000">
-اطلب الآن
-</button>
-</div>
+  <div class="card">
+    <h2>💻 موقع جاهز</h2>
+    <p>نصمم لك موقع احترافي</p>
+    <button class="buy-btn" data-service="موقع كامل" data-price="1000">
+      اطلب الآن
+    </button>
+  </div>
 
 </section>
 
 
-<!-- POPUP -->
+<!-- ================= POPUP ================= -->
 <div class="popup" id="popup">
+  <div class="popup-box">
 
-<div class="popup-box">
+    <span class="close" onclick="closePopup()">✖</span>
 
-<span class="close" onclick="closePopup()">✖</span>
+    <h2 id="title"></h2>
+    <p id="desc"></p>
 
-<h2 id="title"></h2>
+    <button onclick="openPayment()" class="pay-btn">
+      إتمام الشراء 💳
+    </button>
 
-<p id="desc"></p>
-
-<button onclick="openPayment()" class="pay-btn">
-إتمام الشراء 💳
-</button>
-
-</div>
-
+  </div>
 </div>
 
 
-<!-- PAYMENT -->
+<!-- ================= PAYMENT ================= -->
 <div class="payment" id="payment">
+  <div class="payment-box">
 
-<div class="payment-box">
+    <h3 id="payTitle"></h3>
+    <p>اختر طريقة الدفع</p>
 
-<h3 id="payTitle"></h3>
+    <button onclick="pay()">تأكيد الدفع</button>
 
-<p>اختر طريقة الدفع</p>
-
-<button onclick="pay()">تأكيد الدفع</button>
-
-</div>
-
+  </div>
 </div>
 
 
+<!-- سكربت يوتيوب (مهم جدًا) -->
+<script src="https://apis.google.com/js/platform.js" defer></script>
+
+<!-- ملف الجافاسكربت -->
 <script src="footer.js"></script>
 
 </body>
