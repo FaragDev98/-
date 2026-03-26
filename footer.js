@@ -214,8 +214,7 @@ if(copyBtn){
       // انتهاء الوقت
       clearInterval(timerInterval);
 
-      status.style.color="red";
-      status.innerHTML="❌ الوقت خلص! لازم تضغط (نسخ الرقم) تاني";
+    
 
       copyTime = 0; // إلغاء النسخ القديم
     }
@@ -251,7 +250,7 @@ document.getElementById('confirmBtn').addEventListener("click",()=>{
  // لازم يضغط نسخ الأول
  if(!copyTime){
   status.style.color="red";
-  status.innerHTML="❌ لازم تضغط (نسخ الرقم) الأول";
+  status.innerHTML=" ❌    يطلب الضغت علا زر النسخ وتجري العماليه في اقل من ٥ دقائق   ";
   return;
  }
 
@@ -279,14 +278,14 @@ document.getElementById('confirmBtn').addEventListener("click",()=>{
  // التأكد إنه صورة
  if(!file.type.includes("image")){
   status.style.color="red";
-  status.innerHTML="❌ لازم ترفع صورة Screenshot";
+  status.innerHTML=" ❌ يجب ان تكون الصوره حديثه  Screenshot  ";
   return;
  }
 
  // التأكد من الحجم
  if(file.size > 2 * 1024 * 1024){
   status.style.color="red";
-  status.innerHTML="❌ الصورة كبيرة أو غير مناسبة";
+  status.innerHTML=" ❌     يجب انت تكون الصوره بمقايس الموبيل    ";
   return;
  }
 
