@@ -26,6 +26,42 @@ body{
   gap:10px;
   margin:15px 0;
 }
+.social-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.social-icons a{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  background:#111;
+  color:#fff;
+  transition: 0.3s;
+  cursor:pointer;
+}
+
+.social-icons a img{
+  width:28px;
+  height:28px;
+}
+
+.social-icons a.done{
+  background:#28a745; /* أخضر */
+}
+
+.follow-btn.done span{
+  font-weight:bold;
+  color:#fff;
+}
+
 
 /* كل عنصر */
 .social-icons a{
@@ -44,7 +80,7 @@ body{
 /* الأيقونات */
 .social-icons img{
   width:20px;
-  height:20px;
+  height:15px;
   filter:invert(100%);
 }
 
