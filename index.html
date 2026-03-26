@@ -86,35 +86,81 @@
 </section>
 
 
-<!-- ================= POPUP ================= -->
-<div class="popup" id="popup">
-  <div class="popup-box">
+<!-- PAYMENT MODAL -->
+<div class="payment-modal" id="paymentModal">
+<div class="payment-box">
 
-    <span class="close" onclick="closePopup()">✖</span>
+<div class="modal-header">
+  <h3>إتمام الدفع</h3>
+  <span class="close-x" onclick="closePayment()">✖</span>
+</div>
 
-    <h2 id="title"></h2>
-    <p id="desc"></p>
+<p id="serviceTitle"></p>
 
-    <button onclick="openPayment()" class="pay-btn">
-      إتمام الشراء 💳
-    </button>
+<h4>اختر طريقة الدفع</h4>
 
+<div class="methods">
+
+  <div class="pay-item" data-method="فودافون كاش">
+    <img src="../icons/vodafone.png">
+    <h4>فودافون كاش</h4>
+    <strong>01066047545</strong>
   </div>
+
+  <div class="pay-item" data-method="أورنج كاش">
+    <img src="../icons/orange.png">
+    <h4>أورنج كاش</h4>
+    <strong>01285895096</strong>
+  </div>
+
+  <div class="pay-item" data-method="وي كاش">
+    <img src="../icons/we.png">
+    <h4>وي كاش</h4>
+    <strong>01558516081</strong>
+  </div>
+
+  <div class="pay-item" data-method="PayPal">
+    <img src="../icons/paypal.png">
+    <h4>PayPal</h4>
+  </div>
+
 </div>
 
 
-<!-- ================= PAYMENT ================= -->
-<div class="payment" id="payment">
-  <div class="payment-box">
+<!-- ===== تحويل عادي ===== -->
+<div id="normalPayment">
 
-    <h3 id="payTitle"></h3>
-    <p>اختر طريقة الدفع</p>
+<p class="guide">
+📌 انسخ الرقم → ابعت الفلوس → خد Screenshot → ارفعه هنا
+</p>
 
-    <button onclick="pay()">تأكيد الدفع</button>
+<input type="text" id="payNumber" placeholder="رقم التحويل">
+<input type="text" id="userNumber" placeholder="رقمك اللي حولت منه">
+<input type="file" id="payProof" accept="image/*">
 
-  </div>
+<button id="copyBtn">📋 نسخ الرقم</button>
+
 </div>
 
+
+<!-- ===== PayPal ===== -->
+<div id="paypalPayment" style="display:none;">
+
+<p class="guide">💳 ادخل بيانات البطاقة</p>
+
+<input type="text" placeholder="Card Number">
+<input type="text" placeholder="MM/YY">
+<input type="text" placeholder="CVV">
+<input type="text" placeholder="Name on Card">
+
+</div>
+
+<button id="confirmBtn">تأكيد الدفع</button>
+
+<p id="payStatus"></p>
+
+</div>
+</div>
 
 <!-- سكربت يوتيوب (مهم جدًا) -->
 <script src="https://apis.google.com/js/platform.js" defer></script>
