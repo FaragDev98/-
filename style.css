@@ -63,24 +63,11 @@ body{
 }
 
 
-/* كل عنصر */
-.social-icons a{
-  display:flex;
-  align-items:center;
-  gap:5px;
-  background:#111;
-  color:#fff;
-  padding:8px 12px;
-  border-radius:20px;
-  text-decoration:none;
-  font-size:13px;
-  transition:0.3s;
-}
 
 /* الأيقونات */
 .social-icons img{
-  width:20px;
-  height:15px;
+  width:10px;
+  height:10px;
   filter:invert(100%);
 }
 
