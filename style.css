@@ -1,12 +1,13 @@
 
-  padding: 0;
   box-sizing: border-box; /* لضمان ضبط المقاسات بدقة */
   font-family: 'Amiri', serif; /* الخط الأساسي الملكي */
 }
 
 /* 2. إعدادات الصفحة والخط العربي الاحترافي */
 body {
-  background: #f3f4f6; /* الخلفية الرمادية المريحة */
+ margin: 0;
+  padding: 0; 
+    background: #f3f4f6; /* الخلفية الرمادية المريحة */
   direction: rtl;      /* اتجاه النص من اليمين لليسار */
   text-align: right;   /* محاذاة الكلام لليمين */
   color: #2c3e50;      /* لون خط كحلي وقور */
