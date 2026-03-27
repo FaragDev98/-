@@ -306,16 +306,10 @@ h2.text-center{
 /* ================= الفيديو (ستايل فيسبوك) ================= */
 .video-container{
   width:100%;
-  aspect-ratio: 16/9; /* زي الفيسبوك */
+  height:300px; /* 👈 ده حجم المربع اللي بيظهر */
+  overflow:hidden; /* يخفي الزوايد */
   background:#000;
 }
-
-.video-container iframe{
-  width:100%;
-  height:100%;
-  border:none;
-}
-
 /* ================= محتوى الدرس ================= */
 .post-body{
   padding:15px;
