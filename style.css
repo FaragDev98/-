@@ -271,6 +271,92 @@ body{
 }
 
 
+/* ================= عنوان القسم ================= */
+.text-center{
+  text-align:center;
+}
+
+h2.text-center{
+  font-size:28px;
+  font-weight:800;
+  margin-top:30px;
+  color:#8B0000; /* نفس لون الهيدر */
+}
+
+.lead{
+  font-size:16px;
+  color:#555;
+  margin-bottom:25px;
+}
+
+/* ================= الكارت (الدرس) ================= */
+.post{
+  background:#fff;
+  margin:20px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.post:hover{
+  transform:translateY(-5px);
+}
+
+/* ================= الفيديو (ستايل فيسبوك) ================= */
+.video-container{
+  width:100%;
+  aspect-ratio: 16/9; /* زي الفيسبوك */
+  background:#000;
+}
+
+.video-container iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* ================= محتوى الدرس ================= */
+.post-body{
+  padding:15px;
+}
+
+.post-body h4{
+  font-size:20px;
+  font-weight:800;
+  margin-bottom:10px;
+  color:#111;
+}
+
+/* ================= الأزرار ================= */
+.show-text-btn{
+  background:linear-gradient(45deg,#8B0000,#000);
+  color:#fff;
+  border:none;
+  padding:10px 14px;
+  border-radius:12px;
+  margin:5px;
+  cursor:pointer;
+  font-weight:700;
+  transition:0.3s;
+}
+
+.show-text-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 10px red;
+}
+
+/* ================= النص المخفي ================= */
+.lesson-content{
+  display:none;
+  margin-top:10px;
+  background:#f9fafb;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid #eee;
+}
+
+
 /* ===================== طرق الدفع ===================== */
 .methods{
   display:grid;
