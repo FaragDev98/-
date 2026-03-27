@@ -1,8 +1,6 @@
 /* شكل عام */
 body{
   margin:0;
-/* تنسيق النص الكلاسيكي الفخم للغة العربية */
-.classic-text {
   font-family: 'Tajawal', serif;
   font-size: 50px;
   font-weight:900px;    /* خط عريض وتخين */
