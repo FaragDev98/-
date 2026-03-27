@@ -292,8 +292,8 @@ h2.text-center{
 /* ================= الكارت (الدرس) ================= */
 .post{
   background:#fff;
-  margin:20px;
-  border-radius:20px;
+  margin:200px;
+  border-radius:200px;
   overflow:hidden;
   box-shadow:0 10px 25px rgba(0,0,0,0.1);
   transition:0.3s;
