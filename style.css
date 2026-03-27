@@ -3,7 +3,7 @@ body{
   margin:0;
 /* تنسيق النص الكلاسيكي الفخم للغة العربية */
 .classic-text {
-  font-family: 'Amiri', serif;
+  font-family: 'Tajawal', serif;
   font-size: 50px;
   font-weight:900px;    /* خط عريض وتخين */
   line-height:2px;    /* مسافة مريحة بين السطور */
