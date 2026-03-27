@@ -1,7 +1,8 @@
 /* شكل عام */
 body{
   margin:0;
-  font-family:cairo;
+  font-family: 'Cairo', sans-serif;
+  font-size: 18px; /* هنا حددنا حجم الخط للموقع كله */
   background:#f3f4f6;
 }
 
