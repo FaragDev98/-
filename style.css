@@ -76,50 +76,79 @@ body{
 }
 
 /* المربع */
+/* ================= المربع (الكارد) ================= */
 .about-content{
-  background:linear-gradient(135deg,#000,#8B0000);
-  color:#fff;
-  padding:30px;
-  border-radius:25px;
-  width:90%;
-  max-width:900px;
-  text-align:center;
-  position:relative;
-  box-shadow:0 0 25px red;
-  animation:popup 0.4s ease;
+  background:linear-gradient(135deg,#000,#8B0000); /* خلفية متدرجة أسود + أحمر */
+  color:#fff; /* لون النص أبيض */
+  padding:40px; /* مسافة داخلية أكبر */
+  border-radius:25px; /* حواف دائرية */
+  width:95%; /* عرض أكبر شوية */
+  max-width:1000px; /* أقصى عرض */
+  text-align:center; /* توسيط النص */
+  position:relative; /* علشان زر القفل */
+  box-shadow:0 0 30px rgba(255,0,0,0.6); /* ظل أحمر ناعم */
+  animation:popup 0.4s ease; /* حركة الظهور */
+  margin:auto; /* توسيط الكارد */
 }
 
-/* الصورة (مربعة) */
+/* ================= الصورة (مربعة) ================= */
 .about-img{
-  width:390px;
-  height:250px;
-  border-radius:20px;
-  object-fit:cover;
-  border:3px solid red;
-  margin-bottom:15px;
+  width:260px; /* عرض الصورة */
+  height:260px; /* نفس الارتفاع = مربع */
+  border-radius:20px; /* حواف دائرية */
+  object-fit:cover; /* ملء الصورة بدون تشويه */
+  border:3px solid red; /* إطار أحمر */
+  margin-bottom:20px; /* مسافة تحت الصورة */
 }
 
-/* الاسم */
+/* ================= الاسم ================= */
 .about-content h2{
-  font-size:30px;
-  margin-bottom:10px;
+  font-size:32px; /* حجم أكبر */
+  margin-bottom:10px; /* مسافة تحت */
 }
 
-/* النص */
+/* ================= النص ================= */
 .about-content p{
-  font-size:15px;
-  line-height:1.6;
+  font-size:16px; /* حجم النص */
+  line-height:1.8; /* تباعد بين السطور */
+  opacity:0.9; /* نعومة في اللون */
 }
 
-/* زر القفل */
+/* ================= زرار (احترافي) ================= */
+.about-content button{
+  margin-top:20px; /* مسافة فوق الزر */
+  padding:12px 25px; /* حجم الزر */
+  border:none; /* بدون إطار */
+  border-radius:10px; /* حواف ناعمة */
+  background:red; /* لون أحمر */
+  color:#fff; /* نص أبيض */
+  font-size:16px; /* حجم النص */
+  cursor:pointer; /* شكل اليد */
+  transition:0.3s; /* حركة ناعمة */
+}
+
+/* تأثير عند المرور */
+.about-content button:hover{
+  background:#ff2a2a; /* أحمر أفتح */
+  transform:scale(1.05); /* تكبير بسيط */
+}
+
+/* ================= زر القفل ================= */
 .close{
-  position:absolute;
-  top:10px;
-  right:15px;
-  font-size:22px;
-  cursor:pointer;
+  position:absolute; /* تثبيت داخل الكارد */
+  top:10px; /* من فوق */
+  right:15px; /* من اليمين */
+  font-size:24px; /* حجم أكبر */
+  cursor:pointer; /* شكل اليد */
+  color:#fff; /* لون أبيض */
+  transition:0.3s;
 }
 
+/* تأثير القفل */
+.close:hover{
+  color:red; /* يتحول لأحمر */
+  transform:rotate(90deg); /* لفة خفيفة */
+}
 /* أنيميشن */
 @keyframes popup{
   from{
