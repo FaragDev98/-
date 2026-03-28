@@ -305,15 +305,15 @@ h2.text-center{
 
 .post{
 .video-container{
-  width:120%;
-  height:350px; /* 👈 ده حجم المربع اللي بيظهر */
+  width:100%;
+  height:400px; /* 👈 ده حجم المربع اللي بيظهر */
   overflow:hidden; /* يخفي الزوايد */
   background:#000;
 }
 
 .video-container iframe{
-  width:70%;
-  height:120%; /* 👈 نكبر الفيديو عشان يتقص */
+  width:100%;
+  height:100%; /* 👈 نكبر الفيديو عشان يتقص */
   transform:translateY(-10%); /* 👈 نرفع الفيديو لفوق */
   border:none;
 }
