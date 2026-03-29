@@ -1,17 +1,22 @@
-/* ================= إعدادات عامة ================= */
 body{
-  margin:0; /* إزالة الهوامش */
-  font-family:cairo; /* الخط */
-  background:#f3f4f6; /* لون الخلفية */
+  margin:0;
+.classic-text {
+  font-family: 'Amiri', serif;
+  font-size: 240px;
+  font-weight: 900px; /* عشان يكون عريض وتخين */
+  line-height: 2px;
+  color: #2c3e50;
+}
+  background:#f3f4f6;
 }
 
-/* ================= الهيدر ================= */
+/* ================= HEADER ================= */
 .header{
   display:flex;
   justify-content:space-between;
   align-items:center;
   padding:15px 20px;
-  background:linear-gradient(45deg,#000,#8B0000); /* أسود + أحمر */
+  background:linear-gradient(45deg,#000,#8B0000);
   color:#fff;
   position:sticky;
   top:0;
@@ -28,6 +33,7 @@ body{
 .logo span{
   font-size:20px;
   font-weight:bold;
+  color:#fff;
 }
 
 /* صورة اللوجو */
@@ -41,106 +47,109 @@ body{
 
 /* زر عني */
 .about-btn{
-  background:linear-gradient(45deg,#8B0000,#000);
+  background:linear-gradient(45deg,red,black);
   border:none;
   padding:10px 18px;
   border-radius:25px;
   color:#fff;
+  font-weight:bold;
   cursor:pointer;
   box-shadow:0 0 10px red;
+  transition:0.3s;
 }
 
+.about-btn:hover{
+  transform:scale(1.1);
+}
+
+/* ================= POPUP ================= */
+
+/* الخلفية */
+.about-popup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+/* المربع */
 /* ================= الخدمات ================= */
 .services{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
+  display:flex; /* يخليهم جنب بعض */
+  flex-direction:column; /* في الموبايل تحت بعض */
+  gap:20px; /* مسافة بينهم */
   padding:20px;
 }
 
-/* الكارت */
+/* ================= الكارت ================= */
 .card{
   background:#fff;
   padding:25px;
   border-radius:20px;
   text-align:center;
   box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-/* الزر */
-.buy-btn{
-  margin-top:15px;
-  padding:12px 25px;
-  border:none;
-  border-radius:15px;
-  background:linear-gradient(145deg,#5a0000,#ff0000);
-  color:#fff;
-  cursor:pointer;
   transition:0.3s;
 }
 
-.buy-btn:hover{
-  transform:scale(1.05);
+/* تأثير عند المرور */
+.card:hover{
+  transform:translateY(-5px);
 }
 
-/* ================= كارت الدرس ================= */
-.post{
-  background:#fff;
-  margin:15px;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+/* ================= الزر ================= */
+.buy-btn{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:red;
+  color:#fff;
+  cursor:pointer;
+}
+/* أنيميشن */
+@keyframes popup{
+  from{
+    transform:scale(0.6);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
 }
 
-/* ================= الفيديو (أساس التصميم) ================= */
-.video-container{
+/* ================= Responsive ================= */
+@media (max-width:600px){
+
+  .logo span{
+    font-size:16px;
+  }
+
+  .about-content{
+    padding:20px;
+  }
+
+  .about-img{
+    width:100px;
+    height:100px;
+  }
+
+}
+
+/* ================= الفيديو (نص الشاشة) ================= */
+.video-box{
   width:100%;
-  height:250px; /* حجم ثابت */
+  height:50vh; /* نص الشاشة */
   overflow:hidden;
-  background:#000;
 }
 
-.video-container iframe{
+.video-box iframe{
   width:100%;
   height:100%;
   border:none;
-}
-
-/* ================= محتوى الدرس ================= */
-.post-body{
-  padding:15px;
-}
-
-.post-body h4{
-  font-size:20px;
-  font-weight:800;
-  margin-bottom:10px;
-}
-
-/* ================= الأزرار ================= */
-.lesson-btn{
-  background:linear-gradient(145deg,#5a0000,#a30000);
-  color:#fff;
-  border:none;
-  padding:10px 15px;
-  border-radius:12px;
-  margin:5px;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.lesson-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 10px red;
-}
-
-/* ================= النص المخفي ================= */
-.lesson-content{
-  display:none;
-  margin-top:10px;
-  background:#f9fafb;
-  padding:15px;
-  border-radius:12px;
 }
 
 /* ================= السوشيال ================= */
@@ -151,25 +160,206 @@ body{
   gap:10px;
   margin:15px 0;
 }
-
-.social-icons a{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  padding:8px 12px;
-  border-radius:12px;
-  text-decoration:none;
-  background:#111;
-  color:#fff;
-  transition:0.3s;
+.social-icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
 }
 
+.social-icons a{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  background:#111;
+  color:#fff;
+  transition: 0.3s;
+  cursor:pointer;
+}
+
+.social-icons a img{
+  width:28px;
+  height:28px;
+}
+
+.social-icons a.done{
+  background:#28a745; /* أخضر */
+}
+
+.follow-btn.done span{
+  font-weight:bold;
+  color:#fff;
+}
+
+/* الأيقونات */
+.social-icons img{
+  width:20px;
+  height:20px;
+  filter:invert(100%);
+}
+
+/* hover */
 .social-icons a:hover{
-  background:red;
+  background:#ff0000; /* لون يوتيوب */
   transform:scale(1.05);
 }
 
-/* ================= نافذة الدفع ================= */
+/* ================= الخدمات ================= */
+/* ================= الكارت الموحد ================= */
+.card,
+.post{
+  background:#fff; /* خلفية بيضاء */
+  margin:15px; /* مسافة خارجية */
+  border-radius:20px; /* حواف ناعمة */
+  overflow:hidden; /* يخفي الزوايد */
+  box-shadow:0 10px 25px rgba(0,0,0,0.1); /* ظل */
+  transition:0.3s;
+}
+
+/* تأثير */
+.card:hover,
+.post:hover{
+  transform:translateY(-5px);
+}
+
+/* ================= الفيديو (موحد) ================= */
+.video-container{
+  width:100%;
+  height:250px; /* نفس المقاس */
+  overflow:hidden;
+  background:#000;
+}
+
+.video-container iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* ================= المحتوى ================= */
+.post-body{
+  padding:15px;
+}
+
+.post-body h4{
+  font-size:20px;
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+/* ================= الزرار الموحد ================= */
+.main-btn{
+  margin-top:10px;
+  padding:12px 20px;
+  border:none;
+  border-radius:15px;
+  background:linear-gradient(145deg,#5a0000,#ff0000); /* أحمر احترافي */
+  color:#fff;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* hover */
+.main-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 15px red;
+}
+
+/* ضغط */
+.main-btn:active{
+  transform:scale(0.95);
+}
+
+/* ================= محتوى الدرس ================= */
+.post-body{
+padding:15px;
+}
+
+.post-body h4{
+font-size:20px;
+font-weight:800;
+margin-bottom:10px;
+color:#111;
+}
+
+/* ================= الأزرار ================= */
+.show-text-btn{
+background:linear-gradient(45deg,#8B0000,#000);
+color:#fff;
+border:none;
+padding:10px 14px;
+border-radius:12px;
+margin:5px;
+cursor:pointer;
+font-weight:700;
+transition:0.3s;
+}
+
+.show-text-btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 10px red;
+}
+
+/* ================= النص المخفي ================= */
+.lesson-content{
+display:none;
+margin-top:10px;
+background:#f9fafb;
+padding:15px;
+border-radius:12px;
+border:1px solid #eee;
+}
+
+
+/* ================= الكارت ================= */
+.post{
+  background:#fff;
+  margin:10px;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.post:hover{
+  transform:translateY(-5px);
+}
+
+
+/* مربع الفيديو داخل الكارت */
+.video-container{
+  width:100%;
+  height:250px; /* 👈 حجم المربع */
+  overflow:hidden;
+  background:#000;
+}
+
+.video-container iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+
+/* محتوى الكارت */
+.post-body{
+  padding:15px;
+}
+
+.post-body h4{
+  font-size:20px;
+  font-weight:800;
+}
+
+
+
+/* ===================== المودال (الخلفية) ===================== */
 .payment-modal{
   display:none;
   position:fixed;
@@ -184,45 +374,106 @@ body{
   display:flex;
 }
 
-/* الصندوق */
+/* الصندوق - حجم متجاوب مع الشاشة */
 .payment-box{
-  background:#fff;
-  width:90%;
-  max-width:380px;
-  padding:20px;
+  background:#ffffff;
+  width:90%;              /* ياخد 90% من عرض الشاشة */
+  max-width:380px;        /* لا يزيد عن 380px على الشاشات الكبيرة */
+  max-height:80vh;        /* ارتفاع أقصى 80% من ارتفاع الشاشة */
+  padding:18px;
   border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.18);
+  transform:translateY(30px);
+  transition:.3s ease;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  overflow-y:auto;        /* لو المحتوى طويل يظهر شريط تمرير */
 }
 
-/* طرق الدفع */
+
+/* ===================== طرق الدفع ===================== */
 .methods{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px;
+  gap:12px;
+  margin:15px 0;
 }
 
-/* كل طريقة */
+/* كارت كل طريقة دفع */
 .pay-item{
   border:1px solid #ddd;
-  border-radius:12px;
-  padding:10px;
+  border-radius:14px;
+  padding:12px;
   text-align:center;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+/* أيقونة الدفع */
+.pay-item img{
+  width:40px;
+  margin-bottom:6px;
+}
+
+/* اسم الطريقة */
+.pay-item h4{
+  font-size:14px;
+  margin:4px 0;
+}
+
+/* الرقم */
+.pay-item strong{
+  font-size:13px;
+  color:#16a34a;
+}
+
+/* عند الاختيار */
+.pay-item.selected{
+  border:2px solid #22c55e;
+  background:#ecfdf5;
+  transform:scale(1.03);
+}
+
+
+/* ===================== التعليمات ===================== */
+.guide{
+  font-size:14px;
+  margin:10px 0;
+  color:#555;
+}
+
+
+/* ===================== المدخلات ===================== */
+input{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:12px;
+  border:1px solid #ccc;
+  font-size:1rem;
+}
+
+
+/* ===================== زر النسخ ===================== */
+#copyBtn{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  border:none;
+  background:#2563eb;
+  color:#fff;
+  border-radius:10px;
   cursor:pointer;
 }
 
-.pay-item.selected{
-  border:2px solid green;
-  background:#ecfdf5;
-}
-
-/* ================= ريسبونسيف ================= */
-@media (max-width:600px){
-
-  .logo span{
-    font-size:16px;
-  }
-
-  .video-container{
-    height:200px; /* أصغر على الموبايل */
-  }
-
+/* ===================== زر التأكيد ===================== */
+#confirmBtn{
+  width:100%;
+  padding:14px;
+  background:#22c55e;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
 }
