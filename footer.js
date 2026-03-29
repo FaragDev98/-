@@ -1,4 +1,12 @@
 
+function openAbout(){
+  document.getElementById("aboutPopup").style.display = "flex";
+}
+
+function closeAbout(){
+  document.getElementById("aboutPopup").style.display = "none";
+}
+
 function openAbout() {
   document.getElementById("aboutBox").style.display = "flex";
 }
