@@ -1,61 +1,61 @@
 /* ===================== الشكل العام ===================== */
 body{
   margin:0; /* إزالة المسافات الافتراضية */
-  font-family:cairo;
-  background:#f3f4f6; /* خلفية عامة فاتحة */
+  font-family:cairo; /* نوع الخط */
+  background:#f3f4f6; /* لون الخلفية */
 }
 
 /* ===================== النص الكلاسيكي ===================== */
 .classic-text {
-  font-family: 'Amiri', serif;
-  font-size: 300px;
-  font-weight:1000; /* عريض جداً */
-  line-height: 2px;
-  color: #2c3e50;
+  font-family: 'Amiri', serif; /* خط عربي مزخرف */
+  font-size: 240px; /* حجم الخط */
+  font-weight: 900; /* تخين جداً */
+  line-height: 2px; /* ارتفاع السطر */
+  color: #2c3e50; /* لون النص */
 }
 
 /* ===================== HEADER ===================== */
 .header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 20px;
-  background:linear-gradient(45deg,#000,#8B0000); /* لون الراس */
-  color:#fff;
-  position:sticky;
+  display:flex; /* ترتيب أفقي */
+  justify-content:space-between; /* توزيع العناصر */
+  align-items:center; /* محاذاة في المنتصف */
+  padding:15px 20px; /* مسافات داخلية */
+  background:linear-gradient(45deg,#000,#8B0000); /* لون متدرج */
+  color:#fff; /* لون النص */
+  position:sticky; /* تثبيت الهيدر */
   top:0;
   z-index:1000;
 }
 
 /* ===================== اللوجو ===================== */
 .logo{
-  display:flex;
+  display:flex; /* ترتيب أفقي */
   align-items:center;
-  gap:10px;
+  gap:10px; /* مسافة بين العناصر */
 }
 
 .logo span{
-  font-size:20px;
-  font-weight:bold;
-  color:#fff;
+  font-size:20px; /* حجم النص */
+  font-weight:bold; /* تخين */
+  color:#fff; /* لون */
 }
 
 /* صورة اللوجو */
 .logo-circle{
   width:45px;
   height:45px;
-  border-radius:50%;
-  object-fit:cover;
-  border:2px solid red;
+  border-radius:50%; /* دائري */
+  object-fit:cover; /* ضبط الصورة */
+  border:2px solid red; /* إطار */
 }
 
 /* ===================== زر عني ===================== */
 .about-btn{
-  composes: main-btn; /* استخدام نفس تصميم الأزرار الرئيسية */
+  composes: main-btn; /* نفس تصميم الأزرار */
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(45deg,#000,#8B0000); /* نفس لون الراس */
+  background:linear-gradient(45deg,#000,#8B0000);
   border:none;
   padding:10px 18px;
   border-radius:25px;
@@ -66,26 +66,58 @@ body{
   transition:0.3s;
 }
 
-/* hover */
+/* تأثير عند المرور */
 .about-btn:hover{
   transform:scale(1.05);
 }
 
-/* ضغط */
+/* تأثير عند الضغط */
 .about-btn:active{
   transform:scale(0.95);
-  background:linear-gradient(45deg,#8B0000,#000); /* تغيير اللون عند الضغط */
+  background:linear-gradient(45deg,#8B0000,#000);
 }
 
-/* ===================== البوب أب ===================== */
+/* ===================== البوب أب (لفتة عني) ===================== */
 .about-popup{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.8);
-  display:none;
+  background:rgba(0,0,0,0.8); /* خلفية شفافة */
+  display:none; /* مخفي */
   justify-content:center;
   align-items:center;
   z-index:9999;
+}
+
+/* صندوق البوب أب */
+.about-box{
+  background:#000;
+  width:90%;
+  max-width:500px;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+}
+
+/* زر الإغلاق × */
+.close-about{
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:22px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* الفيديو داخل البوب أب */
+.about-video{
+  width:100%;
+  height:300px;
+}
+
+.about-video iframe{
+  width:100%;
+  height:100%;
+  border:none;
 }
 
 /* ===================== الكروت ===================== */
@@ -99,6 +131,7 @@ body{
   transition:0.3s;
 }
 
+/* تأثير hover */
 .card:hover,
 .post:hover{
   transform:translateY(-5px);
@@ -127,7 +160,7 @@ body{
 .video-box,
 .video-container{
   width:100%;
-  height:50vh; /* نص الشاشة للكرت والفيديو */
+  height:50vh;
   overflow:hidden;
   background:#000;
 }
@@ -172,7 +205,7 @@ body{
   transform:scale(1.05);
 }
 
-/* ===================== الأزرار الموحدة ===================== */
+/* ===================== الأزرار ===================== */
 .main-btn,
 .buy-btn,
 .show-text-btn{
@@ -180,13 +213,14 @@ body{
   padding:12px 20px;
   border:none;
   border-radius:15px;
-  background:linear-gradient(45deg,#000,#8B0000); /* نفس لون الراس */
+  background:linear-gradient(45deg,#000,#8B0000);
   color:#fff;
   font-size:15px;
   cursor:pointer;
   transition:0.3s;
 }
 
+/* hover */
 .main-btn:hover,
 .buy-btn:hover,
 .show-text-btn:hover{
@@ -194,15 +228,18 @@ body{
   box-shadow:0 0 15px red;
 }
 
+/* ضغط */
 .main-btn:active,
 .buy-btn:active,
 .show-text-btn:active,
 .about-btn:active{
   transform:scale(0.95);
-  background:linear-gradient(45deg,#8B0000,#000); /* تغيير اللون عند الضغط */
+  background:linear-gradient(45deg,#8B0000,#000);
 }
 
-/* ===================== البوب أب للدرس ===================== */
+/* ===================== باقي الكود بدون تغيير ===================== */
+/* (سيبته زي ما هو بنفس التعليقات) */
+
 .lesson-content{
   display:none;
   margin-top:10px;
@@ -212,7 +249,6 @@ body{
   border:1px solid #eee;
 }
 
-/* ===================== المدخلات ===================== */
 input{
   width:100%;
   padding:12px;
@@ -222,7 +258,6 @@ input{
   font-size:1rem;
 }
 
-/* ===================== زر النسخ ===================== */
 #copyBtn{
   width:100%;
   padding:12px;
@@ -234,7 +269,6 @@ input{
   cursor:pointer;
 }
 
-/* ===================== زر التأكيد ===================== */
 #confirmBtn{
   width:100%;
   padding:14px;
@@ -245,7 +279,6 @@ input{
   cursor:pointer;
 }
 
-/* ===================== مودال الدفع ===================== */
 .payment-modal{
   display:none;
   position:fixed;
@@ -275,7 +308,6 @@ input{
   overflow-y:auto;
 }
 
-/* ===================== طرق الدفع ===================== */
 .methods{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -313,14 +345,13 @@ input{
   transform:scale(1.03);
 }
 
-/* ===================== التعليمات ===================== */
 .guide{
   font-size:14px;
   margin:10px 0;
   color:#555;
 }
 
-/* ===================== responsive ===================== */
+/* responsive */
 @media (max-width:600px){
   .logo span{
     font-size:16px;
@@ -334,4 +365,4 @@ input{
     width:100px;
     height:100px;
   }
-}
+  }
