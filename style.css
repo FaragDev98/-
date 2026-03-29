@@ -201,12 +201,6 @@ body{
 }
 
 /* ================= الخدمات ================= */
-.services{
-  display:flex; /* يخليهم جنب بعض */
-  flex-direction:column; /* في الموبايل تحت بعض */
-  gap:20px; /* مسافة بينهم */
-  padding:20px;
-}
 /* الصورة نفسها */
 .card-img img{
   width:100%;
