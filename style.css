@@ -76,78 +76,38 @@ body{
 }
 
 /* المربع */
-/* ================= المربع (الكارد) ================= */
-.about-content{
-  background:linear-gradient(135deg,#000,#8B0000); /* خلفية متدرجة أسود + أحمر */
-  color:#fff; /* لون النص أبيض */
-  padding:40px; /* مسافة داخلية أكبر */
-  border-radius:25px; /* حواف دائرية */
-  width:95%; /* عرض أكبر شوية */
-  max-width:1000px; /* أقصى عرض */
-  text-align:center; /* توسيط النص */
-  position:relative; /* علشان زر القفل */
-  box-shadow:0 0 30px rgba(255,0,0,0.6); /* ظل أحمر ناعم */
-  animation:popup 0.4s ease; /* حركة الظهور */
-  margin:auto; /* توسيط الكارد */
+/* ================= الخدمات ================= */
+.services{
+  display:flex; /* يخليهم جنب بعض */
+  flex-direction:column; /* في الموبايل تحت بعض */
+  gap:20px; /* مسافة بينهم */
+  padding:20px;
 }
 
-/* ================= الصورة (مربعة) ================= */
-.about-img{
-  width:260px; /* عرض الصورة */
-  height:260px; /* نفس الارتفاع = مربع */
-  border-radius:20px; /* حواف دائرية */
-  object-fit:cover; /* ملء الصورة بدون تشويه */
-  border:3px solid red; /* إطار أحمر */
-  margin-bottom:20px; /* مسافة تحت الصورة */
-}
-
-/* ================= الاسم ================= */
-.about-content h2{
-  font-size:32px; /* حجم أكبر */
-  margin-bottom:10px; /* مسافة تحت */
-}
-
-/* ================= النص ================= */
-.about-content p{
-  font-size:16px; /* حجم النص */
-  line-height:1.8; /* تباعد بين السطور */
-  opacity:0.9; /* نعومة في اللون */
-}
-
-/* ================= زرار (احترافي) ================= */
-.about-content button{
-  margin-top:20px; /* مسافة فوق الزر */
-  padding:12px 25px; /* حجم الزر */
-  border:none; /* بدون إطار */
-  border-radius:10px; /* حواف ناعمة */
-  background:red; /* لون أحمر */
-  color:#fff; /* نص أبيض */
-  font-size:16px; /* حجم النص */
-  cursor:pointer; /* شكل اليد */
-  transition:0.3s; /* حركة ناعمة */
-}
-
-/* تأثير عند المرور */
-.about-content button:hover{
-  background:#ff2a2a; /* أحمر أفتح */
-  transform:scale(1.05); /* تكبير بسيط */
-}
-
-/* ================= زر القفل ================= */
-.close{
-  position:absolute; /* تثبيت داخل الكارد */
-  top:10px; /* من فوق */
-  right:15px; /* من اليمين */
-  font-size:24px; /* حجم أكبر */
-  cursor:pointer; /* شكل اليد */
-  color:#fff; /* لون أبيض */
+/* ================= الكارت ================= */
+.card{
+  background:#fff;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
   transition:0.3s;
 }
 
-/* تأثير القفل */
-.close:hover{
-  color:red; /* يتحول لأحمر */
-  transform:rotate(90deg); /* لفة خفيفة */
+/* تأثير عند المرور */
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* ================= الزر ================= */
+.buy-btn{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:red;
+  color:#fff;
+  cursor:pointer;
 }
 /* أنيميشن */
 @keyframes popup{
