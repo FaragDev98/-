@@ -75,20 +75,11 @@ body{
   z-index:9999;
 }
 
-/* المربع */
-/* ================= الخدمات ================= */
-.services{
-  display:flex; /* يخليهم جنب بعض */
-  flex-direction:column; /* في الموبايل تحت بعض */
-  gap:20px; /* مسافة بينهم */
-  padding:20px;
-}
-
 /* ================= الكارت ================= */
 .card{
   background:#fff;
-  padding:25px;
-  border-radius:20px;
+  padding:250px;
+  border-radius:200px;
   text-align:center;
   box-shadow:0 10px 25px rgba(0,0,0,0.1);
   transition:0.3s;
@@ -210,8 +201,25 @@ body{
 }
 
 /* ================= الخدمات ================= */
-/* ================= الكارت الموحد ================= */
-/* ================= صورة الكارت ================= */
+.services{
+  display:flex; /* يخليهم جنب بعض */
+  flex-direction:column; /* في الموبايل تحت بعض */
+  gap:20px; /* مسافة بينهم */
+  padding:20px;
+}
+/* الصورة نفسها */
+.card-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover; /* تملى المساحة بدون تشويه */
+  display:block;
+}
+
+/* تأثير احترافي */
+.card-img img:hover{
+  transform:scale(1.05); /* زووم بسيط */
+  transition:0.4s;
+}
 .card-img{
   width:100%; /* عرض كامل */
   height:200px; /* ارتفاع ثابت */
