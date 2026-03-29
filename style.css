@@ -91,9 +91,9 @@ body{
 /* صندوق البوب أب */
 .about-box{
   background:#000;
-  width:90%;
+  width:99%;
   max-width:900px;
-  border-radius:200px;
+  border-radius:20px;
   overflow:hidden;
   position:relative;
 }
