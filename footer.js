@@ -1,8 +1,10 @@
 
+// فتح البوب أب
 function openAbout(){
   document.getElementById("aboutPopup").style.display = "flex";
 }
 
+// قفل البوب أب
 function closeAbout(){
   document.getElementById("aboutPopup").style.display = "none";
 }
@@ -324,3 +326,25 @@ document.getElementById('confirmBtn').addEventListener("click",()=>{
 });
 
 });
+
+// إظهار/إخفاء نص الدرس
+function toggleText(id){
+  const el = document.getElementById(id);
+
+  if(el.style.display === "block"){
+    el.style.display = "none";
+  }else{
+    el.style.display = "block";
+  }
+}
+
+// تشغيل الصوت للنص
+function toggleVoice(id){
+  const text = document.getElementById(id).innerText;
+
+  const speech = new SpeechSynthesisUtterance(text);
+  speech.lang = "ar-EG";
+
+  window.speechSynthesis.cancel(); // يوقف أي صوت قديم
+  window.speechSynthesis.speak(speech);
+}
