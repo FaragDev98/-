@@ -92,8 +92,8 @@ body{
 .about-box{
   background:#000;
   width:90%;
-  max-width:500px;
-  border-radius:20px;
+  max-width:900px;
+  border-radius:200px;
   overflow:hidden;
   position:relative;
 }
