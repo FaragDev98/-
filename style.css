@@ -214,19 +214,54 @@ body{
 /* ================= الخدمات ================= */
 .services{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  padding:20px;
+  width:100%;
+  height:250px; /* 👈 حجم المربع */
+  overflow:hidden;
+  background:#000;
 }
 
-.card{
-  background:#fff;
-  padding:20px;
-  border-radius:15px;
-  text-align:center;
-  box-shadow:0 10px 20px rgba(0,0,0,.1);
+.video-container iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+/* ================= الزرار الأحمر الاحترافي ================= */
+.buy-btn,
+.lesson-btn{
+  background: linear-gradient(145deg, #5a0000, #a30000); /* تدرج أحمر غامق */
+  color: #fff; /* نص أبيض */
+  border: none; /* بدون إطار */
+  padding: 12px 25px; /* حجم الزر */
+  border-radius: 15px; /* حواف ناعمة */
+  font-size: 16px; /* حجم النص */
+  cursor: pointer; /* شكل اليد */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* ظل */
+  transition: all 0.3s ease; /* حركة ناعمة */
 }
 
+/* ================= تأثير عند الضغط ================= */
+.buy-btn:hover,
+.lesson-btn:hover{
+  background: linear-gradient(145deg, #7a0000, #ff0000); /* أحمر أفتح */
+  transform: scale(1.05); /* تكبير بسيط */
+  box-shadow: 0 8px 20px rgba(255,0,0,0.5); /* لمعة */
+}
+
+/* ================= تأثير عند الضغط فعليًا ================= */
+.buy-btn:active,
+.lesson-btn:active{
+  transform: scale(0.95); /* تصغير بسيط */
+}
+
+/* محتوى الكارت */
+.post-body{
+  padding:15px;
+}
+
+.post-body h4{
+  font-size:20px;
+  font-weight:800;
+}
 
 /* ================= محتوى الدرس ================= */
 .post-body{
