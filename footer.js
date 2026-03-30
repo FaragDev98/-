@@ -319,6 +319,24 @@ document.getElementById('confirmBtn').addEventListener("click",()=>{
 
 });
 
+const retryBtn = document.getElementById('retryBtn');
+
+retryBtn.addEventListener("click",()=>{
+  // مسح الحقول
+  document.getElementById('payNumber').value='';
+  document.getElementById('userNumber').value='';
+  document.getElementById('payProof').value='';
+  
+  // إزالة التحديد
+  document.querySelectorAll('.pay-item').forEach(i=>i.classList.remove('selected'));
+  
+  // إخفاء PayPal
+  normalBox.style.display="block";
+  paypalBox.style.display="none";
+
+  // مسح الحالة
+  status.innerHTML='';
+});
 // إظهار/إخفاء نص الدرس
 function toggleText(id){
   const el = document.getElementById(id);
