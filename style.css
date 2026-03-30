@@ -1,57 +1,56 @@
 /* ===================== الشكل العام ===================== */
 body{
   margin:0; /* إزالة المسافات الافتراضية */
-  font-family:'Poppins'; /* نوع الخط */
+  font-family:'Poppins', sans-serif; /* خط مودرن */
   background:#f3f4f6; /* لون الخلفية */
 }
 
 /* ===================== النص الكلاسيكي ===================== */
 .classic-text {
-  font-family: 'Amiri', serif; /* خط عربي مزخرف */
-  font-size: 400px; /* حجم الخط */
-  font-weight: 900px; /* تخين جداً */
-  line-height: 5px; /* ارتفاع السطر */
-  color: #2c3e50; /* لون النص */
+  font-family:'Amiri', serif; /* خط عربي */
+  font-size:120px; /* تم تقليل الحجم عشان ما يكسرش الصفحة */
+  font-weight:900; /* تخين (بدون px ← كان خطأ) */
+  line-height:1.2; /* ارتفاع طبيعي */
+  color:#2c3e50; /* لون النص */
 }
 
 /* ===================== HEADER ===================== */
 .header{
   display:flex; /* ترتيب أفقي */
-  justify-content:space-between; /* توزيع العناصر */
-  align-items:center; /* محاذاة في المنتصف */
-  padding:15px 20px; /* مسافات داخلية */
-  background:linear-gradient(45deg,#000,#8B0000); /* لون متدرج */
-  color:#fff; /* لون النص */
-  position:sticky; /* تثبيت الهيدر */
+  justify-content:space-between; /* توزيع */
+  align-items:center; /* توسيط */
+  padding:15px 20px;
+  background:linear-gradient(45deg,#000,#8B0000);
+  color:#fff;
+  position:sticky; /* ثابت فوق */
   top:0;
   z-index:1000;
 }
 
 /* ===================== اللوجو ===================== */
 .logo{
-  display:flex; /* ترتيب أفقي */
+  display:flex;
   align-items:center;
-  gap:10px; /* مسافة بين العناصر */
+  gap:10px;
 }
 
 .logo span{
-  font-size:48px; /* حجم النص */
-  font-weight:bold; /* تخين */
-  color:#fff; /* لون */
+  font-size:28px; /* كان كبير جدًا */
+  font-weight:bold;
+  color:#fff;
 }
 
 /* صورة اللوجو */
 .logo-circle{
   width:45px;
   height:45px;
-  border-radius:50%; /* دائري */
-  object-fit:cover; /* ضبط الصورة */
-  border:2px solid red; /* إطار */
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid red;
 }
 
 /* ===================== زر عني ===================== */
 .about-btn{
-  composes: main-btn; /* نفس تصميم الأزرار */
   display:flex;
   justify-content:center;
   align-items:center;
@@ -66,39 +65,36 @@ body{
   transition:0.3s;
 }
 
-/* تأثير عند المرور */
+/* hover */
 .about-btn:hover{
   transform:scale(1.05);
 }
 
-/* تأثير عند الضغط */
+/* click */
 .about-btn:active{
   transform:scale(0.95);
-  background:linear-gradient(45deg,#8B0000,#000);
 }
 
-/* ===================== البوب أب (لفتة عني) ===================== */
+/* ===================== بوب أب (عني) ===================== */
 .about-popup{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.8); /* خلفية شفافة */
+  background:rgba(0,0,0,0.8);
   display:none; /* مخفي */
   justify-content:center;
   align-items:center;
   z-index:9999;
 }
 
-/* صندوق البوب أب */
 .about-box{
   background:#000;
-  width:99%;
+  width:95%;
   max-width:900px;
   border-radius:20px;
   overflow:hidden;
   position:relative;
 }
 
-/* زر الإغلاق × */
 .close-about{
   position:absolute;
   top:10px;
@@ -108,7 +104,7 @@ body{
   cursor:pointer;
 }
 
-/* الفيديو داخل البوب أب */
+/* الفيديو */
 .about-video{
   width:100%;
   height:300px;
@@ -123,15 +119,15 @@ body{
 /* ===================== الكروت ===================== */
 .card,
 .post{
-  background:#d6d6d6;
-  margin:20px;
-  border-radius:7px;
+  background:#d6d6d6; /* لون الكارت */
+  margin:20px; /* مسافة بين الكروت */
+  border-radius:10px;
   overflow:hidden;
   box-shadow:0 10px 25px rgba(0,0,0,0.1);
   transition:0.3s;
 }
 
-/* تأثير hover */
+/* حركة عند المرور */
 .card:hover,
 .post:hover{
   transform:translateY(-5px);
@@ -140,7 +136,7 @@ body{
 /* صورة الكارت */
 .card-img{
   width:100%;
-  height:300px;
+  height:250px;
   overflow:hidden;
 }
 
@@ -148,7 +144,6 @@ body{
   width:100%;
   height:100%;
   object-fit:cover;
-  display:block;
   transition:0.4s;
 }
 
@@ -176,8 +171,6 @@ body{
 .social-icons{
   display:flex;
   justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
   gap:12px;
   margin-top:15px;
 }
@@ -192,12 +185,6 @@ body{
   background:#111;
   color:#fff;
   transition:0.3s;
-  cursor:pointer;
-}
-
-.social-icons a img{
-  width:28px;
-  height:28px;
 }
 
 .social-icons a:hover{
@@ -215,88 +202,18 @@ body{
   border-radius:15px;
   background:linear-gradient(45deg,#000,#8B0000);
   color:#fff;
-  font-size:15px;
   cursor:pointer;
   transition:0.3s;
 }
 
-/* hover */
-.main-btn:hover,
-.buy-btn:hover,
-.show-text-btn:hover{
+.main-btn:hover{
   transform:scale(1.05);
   box-shadow:0 0 15px red;
 }
 
-/* ضغط */
-.main-btn:active,
-.buy-btn:active,
-.show-text-btn:active,
-.about-btn:active{
-  transform:scale(0.95);
-  background:linear-gradient(45deg,#8B0000,#000);
-}
-
-
-
-
-
-
-/* ===================== باقي الكود بدون تغيير ===================== */
-/* (سيبته زي ما هو بنفس التعليقات) */
-
-.lesson-content{
-  display:none;
-  margin-top:10px;
-  background:#f9faf;
-  padding:15px;
-  border-radius:12px;
-  border:1px solid #eee;
-}
-
-
-
-input{
-  width:100%;
-  padding:12px;
-  margin-bottom:10px;
-  border-radius:12px;
-  border:1px solid #ccc;
-  font-size:1rem;
-}
-
-
-
-
-#copyBtn{
-  width:100%;
-  padding:12px;
-  margin-bottom:10px;
-  border:none;
-  background:#2563eb;
-  color:#fff;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-
-
-
-#confirmBtn{
-  width:100%;
-  padding:14px;
-  background:#22c55e;
-  color:#fff;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-
-
-
+/* ===================== نافذة الدفع ===================== */
 .payment-modal{
-  display:none;
+  display:none; /* مخفية */
   position:fixed;
   inset:0;
   background:rgba(0,0,0,.6);
@@ -304,90 +221,46 @@ input{
   align-items:center;
 }
 
+/* عند الفتح */
 .payment-modal.active{
   display:flex;
 }
 
+/* صندوق الدفع */
 .payment-box{
-  background:#ffffff;
+  background:#fff;
   width:90%;
   max-width:380px;
-  max-height:80vh;
   padding:18px;
   border-radius:20px;
   box-shadow:0 15px 35px rgba(0,0,0,.18);
-  transform:translateY(30px);
-  transition:.3s ease;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  overflow-y:auto;
 }
 
+/* طرق الدفع */
 .methods{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
-  margin:15px 0;
 }
 
+/* كل طريقة */
 .pay-item{
   border:1px solid #ddd;
   border-radius:14px;
   padding:12px;
   text-align:center;
   cursor:pointer;
-  transition:0.3s;
 }
 
-.pay-item img{
-  width:40px;
-  margin-bottom:6px;
-}
-
-.pay-item h4{
-  font-size:14px;
-  margin:4px 0;
-}
-
-.pay-item strong{
-  font-size:13px;
-  color:#16a34a;
-}
-
+/* اختيار الطريقة */
 .pay-item.selected{
   border:2px solid #22c55e;
   background:#ecfdf5;
-  transform:scale(1.03);
 }
 
-.guide{
-  font-size:14px;
-  margin:10px 0;
-  color:#555;
-}
-
-/* responsive */
+/* ===================== responsive ===================== */
 @media (max-width:600px){
   .logo span{
-    font-size:16px;
+    font-size:18px;
   }
-
-  .about-content{
-    padding:20px;
-  }
-
-
-  
-  .about-img{
-    width:100px;
-    height:100px;
-  }
-  }
-
-
-
-
-
-
-
+}
