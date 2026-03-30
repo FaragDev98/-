@@ -8,7 +8,7 @@ body{
 /* ===================== النص الكلاسيكي ===================== */
 .classic-text {
   font-family: 'Amiri', serif; /* خط عربي مزخرف */
-  font-size: 240px; /* حجم الخط */
+  font-size: 400px; /* حجم الخط */
   font-weight: 900px; /* تخين جداً */
   line-height: 2px; /* ارتفاع السطر */
   color: #2c3e50; /* لون النص */
@@ -35,7 +35,7 @@ body{
 }
 
 .logo span{
-  font-size:20px; /* حجم النص */
+  font-size:48px; /* حجم النص */
   font-weight:bold; /* تخين */
   color:#fff; /* لون */
 }
@@ -123,7 +123,7 @@ body{
 /* ===================== الكروت ===================== */
 .card,
 .post{
-  background:#ffd580;
+  background:#ff4d4d;
   margin:20px;
   border-radius:7px;
   overflow:hidden;
