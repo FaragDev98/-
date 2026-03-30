@@ -125,7 +125,7 @@ body{
 .post{
   background:#fff;
   margin:30px;
-  border-radius:20px;
+  border-radius:10px;
   overflow:hidden;
   box-shadow:0 10px 25px rgba(0,0,0,0.1);
   transition:0.3s;
@@ -139,8 +139,8 @@ body{
 
 /* صورة الكارت */
 .card-img{
-  width:1px;
-  height:28px;
+  width:100px;
+  height:36px;
   overflow:hidden;
 }
 
