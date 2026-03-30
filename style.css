@@ -139,8 +139,8 @@ body{
 
 /* صورة الكارت */
 .card-img{
-  width:100px;
-  height:36px;
+  width:320px;
+  height:20px;
   overflow:hidden;
 }
 
