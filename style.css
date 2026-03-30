@@ -348,15 +348,20 @@ input{
 }
 
 .pay-item img{
-  width:40px;
-  margin-bottom:6px;
+  width:28px;
+  margin-bottom:28px;
 }
 
 .pay-item h4{
   font-size:14px;
   margin:4px 0;
 }
-
+/* تحويل زر الدفع ليصبح مثل أزرار الكروت */
+.pay-item{
+  border:none; /* إزالة الإطار القديم */
+  border-radius:15px; /* نفس أزرار الكروت */
+  padding:12px 20px;
+}
 .pay-item strong{
   font-size:13px;
   color:#16a34a;
