@@ -4,10 +4,6 @@ function openAbout(){
   document.getElementById("aboutPopup").style.display = "flex";
 }
 
-// قفل البوب أب
-function closeAbout(){
-  document.getElementById("aboutPopup").style.display = "none";
-}
 
 
 function closeAbout(event) {
