@@ -4,15 +4,11 @@ function openAbout(){
   document.getElementById("aboutPopup").style.display = "flex";
 }
 
-
-
-function closeAbout(event) {
-  const modal = document.getElementById('about-modal');
-  const iframe = document.getElementById('about-video');
-  modal.style.display = 'none';
-  // إيقاف الفيديو عند الإغلاق
-  iframe.src = "";
+// قفل البوب أب
+function closeAbout(){
+  document.getElementById("aboutPopup").style.display = "none";
 }
+
 // ================= زر الاشتراك =================
 // أزرار السوشيال العامة
 document.querySelectorAll(".social-btn").forEach(btn=>{
