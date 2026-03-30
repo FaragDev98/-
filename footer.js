@@ -48,19 +48,6 @@ document.querySelectorAll(".follow-btn").forEach(btn=>{
     },500);
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
-
-// ================= متغيرات عامة =================
-
-// لتخزين بيانات الدفع
-let selectedMethod = null; // طريقة الدفع المختارة
-let currentService = ""; // اسم الخدمة
-let currentPrice = ""; // السعر
-
-// للتحكم في النسخ والوقت
-let copyTime = 0; // وقت نسخ الرقم
-let timerInterval = null; // التايمر
-let timeLeft = 0; // الوقت المتبقي
 
 
 // ================= الفيديو الذكي =================
@@ -221,7 +208,7 @@ if(copyBtn){
       copyTime = 0; // إلغاء النسخ القديم
     }
 
-  },1000);
+  },0);
 
  });
 }
