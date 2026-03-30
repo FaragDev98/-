@@ -1,11 +1,14 @@
 
-function openAbout() {
-  const modal = document.getElementById('about-modal');
-  const iframe = document.getElementById('about-video');
-  modal.style.display = 'flex';
-  // تشغيل الفيديو تلقائيًا
-  iframe.src = "https://www.youtube.com/embed/04fbjvVF7Cw?autoplay=1";
+// فتح البوب أب
+function openAbout(){
+  document.getElementById("aboutPopup").style.display = "flex";
 }
+
+// قفل البوب أب
+function closeAbout(){
+  document.getElementById("aboutPopup").style.display = "none";
+}
+
 
 function closeAbout(event) {
   const modal = document.getElementById('about-modal');
