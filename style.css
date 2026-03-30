@@ -9,7 +9,7 @@ body{
 .classic-text {
   font-family: 'Amiri', serif; /* خط عربي مزخرف */
   font-size: 240px; /* حجم الخط */
-  font-weight: 900; /* تخين جداً */
+  font-weight: 900px; /* تخين جداً */
   line-height: 2px; /* ارتفاع السطر */
   color: #2c3e50; /* لون النص */
 }
