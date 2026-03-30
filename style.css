@@ -293,8 +293,7 @@ input{
 }
 
 
-
-
+/* ===================== نافذة الدفع ===================== */
 .payment-modal{
   display:none;
   position:fixed;
@@ -302,6 +301,7 @@ input{
   background:rgba(0,0,0,.6);
   justify-content:center;
   align-items:center;
+  z-index:9999;
 }
 
 .payment-modal.active{
@@ -309,39 +309,70 @@ input{
 }
 
 .payment-box{
-  background:#ffff;
+  background:#fff;
   width:90%;
-  max-width:380px;
+  max-width:400px;
   max-height:80vh;
-  padding:18px;
+  padding:20px;
   border-radius:20px;
-  box-shadow:0 15px 35px rgba(0,0,0,.18);
-  transform:translateY(30px);
-  transition:.3s ease;
+  box-shadow:0 15px 35px rgba(0,0,0,.2);
   display:flex;
   flex-direction:column;
   gap:12px;
   overflow-y:auto;
+  transform:translateY(30px);
+  transition:.3s ease;
 }
 
+/* رأس النافذة */
+.modal-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:10px;
+}
+
+.modal-header h3{
+  margin:0;
+  font-size:18px;
+  color:#222;
+}
+
+.close-x{
+  cursor:pointer;
+  font-size:22px;
+  color:#555;
+  transition:0.3s;
+}
+
+.close-x:hover{
+  color:red;
+  transform:scale(1.2);
+}
+
+/* ===================== طرق الدفع ===================== */
 .methods{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
-  margin:15px 0;
+  margin:10px 0;
 }
 
 .pay-item{
-  border:1px solid #ddd;
- background:linear-gradient(45deg,#000,#8B0000);
+  background:linear-gradient(45deg,#000,#8B0000);
   color:#fff;
-}
-  border-radius:10px;
-  padding:12px;
+  border:none;
+  border-radius:15px; /* نفس الكروت */
+  padding:12px 20px;
   text-align:center;
   cursor:pointer;
   transition:0.3s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
 }
+
 .pay-item:hover{
   transform:scale(1.05);
   box-shadow:0 0 15px red;
@@ -349,19 +380,15 @@ input{
 
 .pay-item img{
   width:28px;
-  margin-bottom:28px;
+  height:28px;
+  margin-bottom:8px;
 }
 
 .pay-item h4{
   font-size:14px;
-  margin:4px 0;
+  margin:2px 0;
 }
-/* تحويل زر الدفع ليصبح مثل أزرار الكروت */
-.pay-item{
-  border:none; /* إزالة الإطار القديم */
-  border-radius:15px; /* نفس أزرار الكروت */
-  padding:12px 20px;
-}
+
 .pay-item strong{
   font-size:13px;
   color:#16a34a;
@@ -370,29 +397,92 @@ input{
 .pay-item.selected{
   border:2px solid #22c55e;
   background:#ecfdf5;
+  color:#000;
   transform:scale(1.03);
 }
 
-.guide{
+/* ===================== نص الحالة ===================== */
+#payStatus{
   font-size:14px;
-  margin:10px 0;
-  color:#555;
+  padding:10px;
+  border-radius:12px;
+  background:#f3f4f6;
+  color:#333;
+  min-height:40px;
+}
+
+/* زر إعادة المحاولة */
+#retryBtn{
+  display:none;
+  margin-top:10px;
+  padding:10px 18px;
+  background:#ff0000;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#retryBtn:hover{
+  background:#cc0000;
+  transform:scale(1.05);
+}
+
+/* الحقول */
+.payment-box input[type="text"],
+.payment-box input[type="file"]{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:12px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+
+/* زر النسخ والتأكيد */
+#copyBtn, #confirmBtn{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  border:none;
+  border-radius:12px;
+  color:#fff;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#copyBtn{
+  background:#2563eb;
+}
+
+#copyBtn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 10px #2563eb;
+}
+
+#confirmBtn{
+  background:#22c55e;
+}
+
+#confirmBtn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 10px #22c55e;
 }
 
 /* responsive */
-@media (max-width:600px){
-  .logo span{
-    font-size:16px;
+@media(max-width:600px){
+  .payment-box{
+    padding:15px;
   }
 
-  .about-content{
-    padding:20px;
+  .methods{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
   }
 
-
-  
-  .about-img{
-    width:100px;
-    height:100px;
+  .pay-item img{
+    width:24px;
+    height:24px;
   }
 }
