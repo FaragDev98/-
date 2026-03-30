@@ -139,7 +139,7 @@ body{
 
 /* صورة الكارت */
 .card-img{
-  width:10px;
+  width:1px;
   height:28px;
   overflow:hidden;
 }
