@@ -9,6 +9,21 @@ function closeAbout(){
   document.getElementById("aboutPopup").style.display = "none";
 }
 
+function openAbout() {
+  const modal = document.getElementById('about-modal');
+  const iframe = document.getElementById('about-video');
+  modal.style.display = 'flex';
+  // تشغيل الفيديو تلقائيًا
+  iframe.src = "https://www.youtube.com/embed/04fbjvVF7Cw?autoplay=1";
+}
+
+function closeAbout(event) {
+  const modal = document.getElementById('about-modal');
+  const iframe = document.getElementById('about-video');
+  modal.style.display = 'none';
+  // إيقاف الفيديو عند الإغلاق
+  iframe.src = "";
+}
 // ================= زر الاشتراك =================
 // أزرار السوشيال العامة
 document.querySelectorAll(".social-btn").forEach(btn=>{
