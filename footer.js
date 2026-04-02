@@ -1,49 +1,46 @@
+// ================= البوب أب (عنّي) =================
 
 // فتح البوب أب
 function openAbout(){
   document.getElementById("aboutPopup").style.display = "flex";
 }
 
-// قفل البوب أب
+// قفل البوب أب (زر ×)
 function closeAbout(){
   document.getElementById("aboutPopup").style.display = "none";
 }
 
 // ================= زر الاشتراك =================
-// أزرار السوشيال العامة
+
+// أزرار السوشيال
 document.querySelectorAll(".social-btn").forEach(btn=>{
   btn.addEventListener("click", function(e){
-    e.preventDefault(); // يمنع فتح الرابط مباشرة
+    e.preventDefault(); // منع فتح الرابط مباشرة
     this.classList.add("done");
     this.querySelector("span").innerText = "✔ تم";
-    
-    // Optional: فتح الرابط بعد 1 ثانية
+
+    // فتح الرابط بعد ثانية
     setTimeout(()=>{
       window.open(this.href,"_blank");
     },1000);
   });
 });
 
-// زر الاشتراك في يوتيوب
+// زر يوتيوب
 document.querySelectorAll(".follow-btn").forEach(btn=>{
   btn.addEventListener("click", function(e){
-    e.preventDefault(); // يمنع التحويل العادي للصفحة
+    e.preventDefault();
 
-    const url = this.href;
+    const popup = window.open(this.href, "subscribe", "width=500,height=600");
 
-    // فتح نافذة صغيرة للاشتراك
-    const popup = window.open(url, "subscribe", "width=500,height=600");
-
-    // تغيير شكل الزر فورًا
     this.classList.add("done");
     this.querySelector("span").innerText = "✔ تم الضغط";
 
-    // التحقق من غلق النافذة لإعلام المستخدم بالعودة للموقع
-    const self = this;
-    const timer = setInterval(function(){
+    // متابعة غلق النافذة
+    const timer = setInterval(()=>{
       if(popup.closed){
         clearInterval(timer);
-        alert("تم إغلاق نافذة الاشتراك، الرجوع للموقع.");
+        alert("تم الرجوع للموقع");
       }
     },500);
   });
@@ -52,39 +49,46 @@ document.querySelectorAll(".follow-btn").forEach(btn=>{
 
 // ================= الفيديو الذكي =================
 
-// جلب كل الفيديوهات
+// متغير عشان يمنع تشغيل أكتر من فيديو
+let currentMedia = null;
+
+// جلب الفيديوهات
 const videos = document.querySelectorAll('.service-video');
 
-// إنشاء مراقب عند ظهور الفيديو في الشاشة
+// مراقب الظهور
 const observer = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     const video = entry.target;
 
-    // نتأكد إنه فيديو
     if(video.tagName !== "VIDEO") return;
 
     if(entry.isIntersecting){
-      // تشغيل الفيديو عند الظهور
+
+      // إيقاف أي فيديو تاني
+      if(currentMedia && currentMedia !== video){
+        currentMedia.pause();
+      }
+
       video.currentTime = 0;
       video.muted = false;
       video.play().catch(()=>{});
+
+      currentMedia = video;
+
     }else{
-      // إيقاف الفيديو عند الخروج
       video.pause();
     }
   });
 },{threshold:0.6});
 
-// ربط كل فيديو بالمراقب
+// ربط الفيديوهات
 videos.forEach(v=>{
-  if(v.tagName==="VIDEO"){
-    observer.observe(v);
-  }
+  observer.observe(v);
 });
 
-// ================= الدروس الذكية =================
 
-// فتح وقفل الدرس
+// ================= الدروس (فتح/قفل) =================
+
 function toggleLesson(btn){
   const post = btn.closest(".post");
   const content = post.querySelector(".lesson-content");
@@ -101,7 +105,7 @@ function toggleLesson(btn){
 
 // ================= الصوت =================
 
-let currentAudio = null; // عشان يمنع تشغيل أكتر من صوت
+let currentAudio = null; // منع صوتين
 
 function toggleAudio(btn){
   const post = btn.closest(".post");
@@ -109,7 +113,7 @@ function toggleAudio(btn){
 
   if(!audio) return;
 
-  // لو فيه صوت شغال تاني → نقفله
+  // وقف أي صوت تاني
   if(currentAudio && currentAudio !== audio){
     currentAudio.pause();
   }
@@ -125,7 +129,7 @@ function toggleAudio(btn){
 }
 
 
-// ================= تشغيل تلقائي عند الظهور =================
+// ================= تشغيل تلقائي للدروس =================
 
 const lessonObserver = new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
@@ -135,35 +139,35 @@ const lessonObserver = new IntersectionObserver(entries=>{
     if(!media) return;
 
     if(entry.isIntersecting){
-      // تشغيل
-      if(currentAudio && currentAudio !== media){
-        currentAudio.pause();
+
+      // وقف القديم
+      if(currentMedia && currentMedia !== media){
+        currentMedia.pause();
       }
 
       media.play().catch(()=>{});
-      currentAudio = media;
+      currentMedia = media;
 
     }else{
-      // إيقاف
       media.pause();
     }
   });
 },{threshold:0.6});
 
-
-// ================= ربط العناصر =================
-
+// ربط كل درس
 document.querySelectorAll(".post").forEach(post=>{
   lessonObserver.observe(post);
 });
-// ================= عناصر الدفع =================
+
+
+// ================= الدفع =================
 
 const modal=document.getElementById('paymentModal'); // نافذة الدفع
-const status=document.getElementById('payStatus'); // رسالة الحالة
-const serviceTitle=document.getElementById('serviceTitle'); // عنوان الخدمة
+const status=document.getElementById('payStatus'); // الرسالة
+const serviceTitle=document.getElementById('serviceTitle');
 
-const normalBox=document.getElementById('normalPayment'); // الدفع العادي
-const paypalBox=document.getElementById('paypalPayment'); // PayPal
+const normalBox=document.getElementById('normalPayment');
+const paypalBox=document.getElementById('paypalPayment');
 
 // أرقام الدفع
 const numbers={
@@ -174,23 +178,19 @@ const numbers={
 };
 
 
-// ================= فتح نافذة الدفع =================
+// ================= فتح الدفع =================
 
 document.querySelectorAll('.buy-btn').forEach(btn=>{
  btn.addEventListener("click",()=>{
-  
-  // حفظ الخدمة والسعر
+
   currentService=btn.dataset.service;
   currentPrice=btn.dataset.price;
 
-  // عرضهم للمستخدم
   serviceTitle.innerHTML =
   `${currentService} <br> السعر: ${currentPrice} جنيه`;
 
-  // فتح النافذة
   modal.classList.add('active');
 
-  // تصفير الحالة
   status.innerHTML='';
   copyTime=0;
 
@@ -198,7 +198,7 @@ document.querySelectorAll('.buy-btn').forEach(btn=>{
 });
 
 
-// ================= قفل النافذة =================
+// ================= قفل الدفع =================
 
 window.closePayment = function(){
   modal.classList.remove('active');
@@ -210,78 +210,47 @@ window.closePayment = function(){
 document.querySelectorAll('.pay-item').forEach(item=>{
  item.addEventListener("click",()=>{
 
-  // إزالة التحديد من كل العناصر
   document.querySelectorAll('.pay-item').forEach(i=>i.classList.remove('selected'));
-  
-  // تحديد العنصر الحالي
   item.classList.add('selected');
 
   selectedMethod=item.dataset.method;
 
-  // لو PayPal
   if(selectedMethod === "PayPal"){
     normalBox.style.display="none";
     paypalBox.style.display="block";
   }else{
     normalBox.style.display="block";
     paypalBox.style.display="none";
-
-    // وضع رقم الدفع تلقائي
     document.getElementById('payNumber').value = numbers[selectedMethod];
   }
 
-  // رسالة توضيح
   status.style.color="blue";
-  status.innerHTML="📌 اضغط (نسخ الرقم) ثم ابعت الفلوس وارفع Screenshot خلال 5 دقايق";
+  status.innerHTML="📌 انسخ الرقم وادفع وارفع Screenshot";
 
  });
 });
 
 
-// ================= نسخ رقم الدفع =================
+// ================= نسخ الرقم =================
 
 const copyBtn = document.getElementById('copyBtn');
 
 if(copyBtn){
  copyBtn.addEventListener("click",()=>{
-  
+
   const val=document.getElementById('payNumber').value;
 
-  // لو لم يتم اختيار طريقة دفع
   if(!val){
-    alert("اختار طريقة الدفع الأول");
+    alert("اختار طريقة الدفع");
     return;
   }
 
-  // نسخ الرقم
   navigator.clipboard.writeText(val);
 
-  // بدء الوقت
   copyTime = Date.now();
-  timeLeft = 300; // 5 دقائق
 
   status.style.color="blue";
-  status.innerHTML="✅ تم نسخ الرقم<br>⏳ معاك 5 دقايق تبعت الفلوس وترفع Screenshot";
-
-  // تشغيل التايمر
-  clearInterval(timerInterval);
-
-  timerInterval = setInterval(()=>{
-    
-    timeLeft--;
-
-    if(timeLeft > 0){
-      status.innerHTML=`⏳ باقي ${timeLeft} ثانية لإتمام الدفع`;
-    }else{
-      // انتهاء الوقت
-      clearInterval(timerInterval);
-
-    
-
-      copyTime = 0; // إلغاء النسخ القديم
-    }
-
-  },0);
+  status.innerHTML="✅ تم النسخ";
 
  });
 }
@@ -291,14 +260,8 @@ if(copyBtn){
 
 document.getElementById('confirmBtn').addEventListener("click",()=>{
 
- // ===== لو PayPal =====
  if(selectedMethod === "PayPal"){
-   status.innerHTML="⏳ جاري تحويلك...";
-   
-   setTimeout(()=>{
-     window.open("https://www.paypal.com",'_blank');
-   },1500);
-
+   window.open("https://www.paypal.com",'_blank');
    return;
  }
 
@@ -306,98 +269,50 @@ document.getElementById('confirmBtn').addEventListener("click",()=>{
  const userNumber=document.getElementById('userNumber').value.trim();
  const file=document.getElementById('payProof').files[0];
 
-
-// ================= التحقق =================
-
- // لازم يضغط نسخ الأول
  if(!copyTime){
   status.style.color="red";
-  status.innerHTML=" ❌    يطلب الضغت علا زر النسخ وتجري العماليه في اقل من ٥ دقائق   ";
+  status.innerHTML="❌ لازم تنسخ الرقم الأول";
   return;
  }
 
- // التحقق من الوقت
- if(Date.now() - copyTime > 5*60*1000){
-  status.style.color="red";
-  status.innerHTML="❌ الوقت انتهى! انسخ الرقم تاني";
-  return;
- }
-
- // تحقق البيانات
  if(!selectedMethod || !userNumber || !file){
   status.style.color="red";
-  status.innerHTML="❌ لازم:<br>1- تختار طريقة دفع<br>2- تكتب رقمك<br>3- ترفع Screenshot";
+  status.innerHTML="❌ كمل البيانات";
   return;
  }
 
- // التأكد من الرقم
- if(!Object.values(numbers).includes(payNumber)){
-  status.style.color="red";
-  status.innerHTML="❌ الرقم غير صحيح";
-  return;
- }
+ status.style.color="green";
+ status.innerHTML="✅ تم";
 
- // التأكد إنه صورة
- if(!file.type.includes("image")){
-  status.style.color="red";
-  status.innerHTML=" ❌ يجب ان تكون الصوره حديثه  Screenshot  ";
-  return;
- }
-
- // التأكد من الحجم
- if(file.size > 2 * 1024 * 1024){
-  status.style.color="red";
-  status.innerHTML=" ❌     يجب انت تكون الصوره بمقايس الموبيل    ";
-  return;
- }
-
-
-// ================= نجاح =================
-
- status.style.color="orange";
- status.innerHTML="⏳ جاري التحقق...";
-
- setTimeout(()=>{
-
-   status.style.color="green";
-   status.innerHTML="✅ تم بنجاح";
-
-   // رسالة واتساب
-   const msg = `طلب جديد
-الخدمة: ${currentService}
-السعر: ${currentPrice}
-طريقة الدفع: ${selectedMethod}`;
-
-   window.open(
-     `https://wa.me/201066047545?text=${encodeURIComponent(msg)}`,
-     '_blank'
-   );
-
- },2000);
+ window.open(
+   `https://wa.me/201066047545`,
+   '_blank'
+ );
 
 });
 
-});
+
+// ================= إعادة المحاولة =================
 
 const retryBtn = document.getElementById('retryBtn');
 
 retryBtn.addEventListener("click",()=>{
-  // مسح الحقول
   document.getElementById('payNumber').value='';
   document.getElementById('userNumber').value='';
   document.getElementById('payProof').value='';
   
-  // إزالة التحديد
   document.querySelectorAll('.pay-item').forEach(i=>i.classList.remove('selected'));
   
-  // إخفاء PayPal
   normalBox.style.display="block";
   paypalBox.style.display="none";
 
-  // مسح الحالة
   status.innerHTML='';
 });
-// إظهار/إخفاء نص الدرس
+
+
+// ================= نص + صوت =================
+
+// إظهار/إخفاء النص
 function toggleText(id){
   const el = document.getElementById(id);
 
@@ -408,13 +323,13 @@ function toggleText(id){
   }
 }
 
-// تشغيل الصوت للنص
+// قراءة النص صوتيًا
 function toggleVoice(id){
   const text = document.getElementById(id).innerText;
 
   const speech = new SpeechSynthesisUtterance(text);
   speech.lang = "ar-EG";
 
-  window.speechSynthesis.cancel(); // يوقف أي صوت قديم
+  window.speechSynthesis.cancel();
   window.speechSynthesis.speak(speech);
-}
+  }
