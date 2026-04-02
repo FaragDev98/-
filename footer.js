@@ -12,6 +12,25 @@ function closeAbout(){
 
         );
 
+
+    if(entry.isIntersecting){
+      // تشغيل الفيديو عند الظهور
+      video.currentTime = 0;
+      video.muted = false;
+      video.play().catch(()=>{});
+    }else{
+      // إيقاف الفيديو عند الخروج
+      video.pause();
+    }
+  });
+},{threshold:0.6});
+
+// ربط كل فيديو بالمراقب
+videos.forEach(v=>{
+  if(v.tagName==="VIDEO"){
+    observer.observe(v);
+  }
+});
    
 // ================= زر الاشتراك =================
 
@@ -293,34 +312,6 @@ document.getElementById('confirmBtn').addEventListener("click",()=>{
  );
 
 });
-// ================= تصفير البيانات =================
-function resetPaymentForm(){
-
-  // مسح رقم المستخدم
-  document.getElementById('userNumber').value = '';
-
-  // مسح رقم الدفع
-  document.getElementById('payNumber').value = '';
-
-  // مسح الصورة
-  document.getElementById('payProof').value = '';
-
-  // إلغاء طريقة الدفع
-  selectedMethod = null;
-
-  // إزالة التحديد
-  document.querySelectorAll('.pay-item').forEach(i=>i.classList.remove('selected'));
-
-  // إيقاف التايمر
-  clearInterval(timerInterval);
-
-  // تصفير الوقت
-  copyTime = 0;
-
-  // مسح الرسالة
-  status.innerHTML = '';
-
-}
 
 // ================= إعادة المحاولة =================
 
