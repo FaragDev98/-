@@ -323,13 +323,20 @@ function toggleText(id){
   }
 }
 
-// قراءة النص صوتيًا
-function toggleVoice(id){
-  const text = document.getElementById(id).innerText;
+// ================= تحميل ملفات الملخص =================
 
-  const speech = new SpeechSynthesisUtterance(text);
-  speech.lang = "ar-EG";
+function downloadFile(filePath){
 
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(speech);
-  }
+  // إنشاء لينك وهمي
+  const link = document.createElement("a");
+
+  link.href = filePath;
+
+  // يخليه يحمل بدل ما يفتح
+  link.download = "";
+
+  // ضغط تلقائي
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
