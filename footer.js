@@ -47,46 +47,6 @@ document.querySelectorAll(".follow-btn").forEach(btn=>{
 });
 
 
-// ================= الفيديو الذكي =================
-
-// متغير عشان يمنع تشغيل أكتر من فيديو
-let currentMedia = null;
-
-// جلب الفيديوهات
-const videos = document.querySelectorAll('.service-video');
-
-// مراقب الظهور
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    const video = entry.target;
-
-    if(video.tagName !== "VIDEO") return;
-
-    if(entry.isIntersecting){
-
-      // إيقاف أي فيديو تاني
-      if(currentMedia && currentMedia !== video){
-        currentMedia.pause();
-      }
-
-      video.currentTime = 0;
-      video.muted = false;
-      video.play().catch(()=>{});
-
-      currentMedia = video;
-
-    }else{
-      video.pause();
-    }
-  });
-},{threshold:0.6});
-
-// ربط الفيديوهات
-videos.forEach(v=>{
-  observer.observe(v);
-});
-
-
 // ================= الدروس (فتح/قفل) =================
 
 function toggleLesson(btn){
