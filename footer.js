@@ -12,24 +12,7 @@ function closeAbout(){
 
         );
 
-    if(entry.isIntersecting){
-      // تشغيل الفيديو عند الظهور
-      video.currentTime = 0;
-      video.muted = false;
-      video.play().catch(()=>{});
-    }else{
-      // إيقاف الفيديو عند الخروج
-      video.pause();
-    }
-  });
-},{threshold:0.6});
-
-// ربط كل فيديو بالمراقب
-videos.forEach(v=>{
-  if(v.tagName==="VIDEO"){
-    observer.observe(v);
-  }
-});
+   
 // ================= زر الاشتراك =================
 
 // أزرار السوشيال
