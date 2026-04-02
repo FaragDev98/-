@@ -9,7 +9,7 @@ function openAbout(){
 function closeAbout(){
   document.getElementById("aboutPopup").style.display = "none";
 });
- });
+ 
 // ================= زر الاشتراك =================
 
 // أزرار السوشيال
