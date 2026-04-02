@@ -82,7 +82,80 @@ videos.forEach(v=>{
   }
 });
 
+// ================= الدروس الذكية =================
 
+// فتح وقفل الدرس
+function toggleLesson(btn){
+  const post = btn.closest(".post");
+  const content = post.querySelector(".lesson-content");
+
+  if(content.style.display === "block"){
+    content.style.display = "none";
+    btn.innerText = "عرض الدرس";
+  }else{
+    content.style.display = "block";
+    btn.innerText = "إخفاء الدرس";
+  }
+}
+
+
+// ================= الصوت =================
+
+let currentAudio = null; // عشان يمنع تشغيل أكتر من صوت
+
+function toggleAudio(btn){
+  const post = btn.closest(".post");
+  const audio = post.querySelector("audio");
+
+  if(!audio) return;
+
+  // لو فيه صوت شغال تاني → نقفله
+  if(currentAudio && currentAudio !== audio){
+    currentAudio.pause();
+  }
+
+  if(audio.paused){
+    audio.play();
+    btn.innerText = "إيقاف الصوت";
+    currentAudio = audio;
+  }else{
+    audio.pause();
+    btn.innerText = "تشغيل الصوت";
+  }
+}
+
+
+// ================= تشغيل تلقائي عند الظهور =================
+
+const lessonObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    const post = entry.target;
+    const media = post.querySelector("video, audio");
+
+    if(!media) return;
+
+    if(entry.isIntersecting){
+      // تشغيل
+      if(currentAudio && currentAudio !== media){
+        currentAudio.pause();
+      }
+
+      media.play().catch(()=>{});
+      currentAudio = media;
+
+    }else{
+      // إيقاف
+      media.pause();
+    }
+  });
+},{threshold:0.6});
+
+
+// ================= ربط العناصر =================
+
+document.querySelectorAll(".post").forEach(post=>{
+  lessonObserver.observe(post);
+});
 // ================= عناصر الدفع =================
 
 const modal=document.getElementById('paymentModal'); // نافذة الدفع
