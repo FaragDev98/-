@@ -8,13 +8,8 @@ function openAbout(){
 // قفل البوب أب (زر ×)
 function closeAbout(){
   document.getElementById("aboutPopup").style.display = "none";
-}
-
-        );
-
-
-
-   
+});
+ });
 // ================= زر الاشتراك =================
 
 // أزرار السوشيال
