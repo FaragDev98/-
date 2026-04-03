@@ -378,9 +378,9 @@ input{
   box-shadow:0 0 15px red;
 }
 .pay-item img {
-  width: 70%;          /* نسبة عرض مناسبة داخل المربع */
-  height: auto;        /* يحافظ على النسبة */
-  object-fit: contain;  /* يحافظ على الصورة بدون قص */
+  width:100%;          /* نسبة عرض مناسبة داخل المربع */
+  height:auto;        /* يحافظ على النسبة */
+  object-fit:contain;  /* يحافظ على الصورة بدون قص */
   margin-bottom:0px;   /* مسافة بسيطة أسفل الأيقونة */
 }
 
