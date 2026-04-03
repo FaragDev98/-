@@ -379,8 +379,8 @@ input{
 }
 
 .pay-item img{
-  width:28px;
-  height:28px;
+  width:100%;
+  height:auto;
   margin-bottom:0px;
 }
 
