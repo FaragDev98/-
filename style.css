@@ -355,7 +355,7 @@ input{
 .methods{
   display:grid;                     
   grid-template-columns:1fr 1fr;    /* 2 مربعات جنب بعض */
-  gap:12px;                         
+  gap:;                         
   margin:10px 0;                    
 }
 
@@ -373,7 +373,7 @@ input{
   flex-direction:column;                        /* ترتيب عمودي: أيقونة فوق النص */
   align-items:center;                           /* محاذاة مركزية أفقي */
   justify-content:center;                       /* محاذاة مركزية عمودي */
-  height:100px;                                 /* تصغير المربع */
+  height:10px;                                 /* تصغير المربع */
   overflow:hidden;                              /* منع خروج الصورة */
 }
 
@@ -388,7 +388,7 @@ input{
   width:100%;               /* تمتد كامل عرض المربع */
   height:100%;              /* تمتد كامل ارتفاع المربع */
   object-fit:cover;         /* تغطي المربع بالكامل بدون تشويه */
-  margin:0;                 /* إزالة أي مسافة حول الصورة */
+  margin:8;                 /* إزالة أي مسافة حول الصورة */
 }
 
 /* النص أسفل الأيقونة */
