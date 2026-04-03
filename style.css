@@ -384,23 +384,6 @@ input{
   margin-bottom:0px;   /* مسافة بسيطة أسفل الأيقونة */
 }
 
-.pay-item h4{
-  font-size:14px;
-  margin:2px 0;
-}
-
-.pay-item strong{
-  font-size:13px;
-  color:#16a34a;
-}
-
-.pay-item.selected{
-  border:2px solid #22c55e;
-  background:#ecfdf5;
-  color:#000;
-  transform:scale(1.03);
-}
-
 /* ===================== نص الحالة ===================== */
 #payStatus{
   font-size:14px;
