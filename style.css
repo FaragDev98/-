@@ -351,36 +351,56 @@ input{
 }
 
 ===================== */
+/* ===================== طرق الدفع ===================== */
+.methods{
+  display:grid;                     
+  grid-template-columns:1fr 1fr;    /* 2 مربعات جنب بعض */
+  gap:12px;                         
+  margin:10px 0;                    
+}
+
 /* المربع لكل طريقة دفع */
 .pay-item{
   background:linear-gradient(45deg,#000,#8B0000); /* خلفية متدرجة */
   color:#fff;                                   /* لون النصوص داخل المربع */
   border:none;                                  /* إزالة الحدود الافتراضية */
   border-radius:15px;                           /* زوايا مستديرة */
-  padding:0;                                    /* إزالة البادينج */
+  padding:10px;                                 /* مساحة صغيرة حول النص */
   text-align:center;                            /* محاذاة النصوص للوسط */
   cursor:pointer;                               /* شكل المؤشر عند المرور */
   transition:0.3s;                              /* حركة سلسة عند hover */
   display:flex;                                 /* عرض المحتوى بشكل flex */
   flex-direction:column;                        /* ترتيب عمودي: أيقونة فوق النص */
   align-items:center;                           /* محاذاة مركزية أفقي */
-  justify-content:center;                       /* محاذاة مركزية عمودي */
-  height:130px;                                 /* ارتفاع ثابت أكبر لملء الصورة */
+  justify-content:flex-start;                   /* يبدأ المحتوى من الأعلى */
+  height:130px;                                 /* ارتفاع ثابت للمربع */
   overflow:hidden;                              /* منع خروج الصورة */
 }
 
+/* تأثير hover */
 .pay-item:hover{
-  transform:scale(1.05);                        /* تكبير خفيف عند المرور */
-  box-shadow:0 0 15px red;                      /* ظل عند المرور */
+  transform:scale(1.05);                        
+  box-shadow:0 0 15px red;                      
 }
 
 /* الأيقونة داخل المربع */
 .pay-item img {
-  width:100%;                /* تمتد كامل العرض */
-  height:100%;               /* تمتد كامل الارتفاع */
-  object-fit:cover;          /* تغطي المربع بالكامل بدون تشويه */
-  margin:0;                  /* إزالة أي مسافة حول الصورة */
-  }
+  width:60%;                /* عرض مناسب داخل المربع */
+  height:auto;              /* يحافظ على نسبة الصورة */
+  object-fit:contain;       /* يحافظ على الصورة بدون قص */
+  margin-bottom:8px;        /* مسافة أسفل الأيقونة قبل النص */
+}
+
+/* النص أسفل الأيقونة */
+.pay-item h4{
+  font-size:14px;
+  margin:2px 0;
+}
+
+.pay-item strong{
+  font-size:13px;
+  color:#16a34a;
+}
 /* ===================== نص الحالة ===================== */
 #payStatus{
   font-size:14px;
