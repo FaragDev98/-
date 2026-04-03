@@ -350,56 +350,29 @@ input{
   transform:scale(1.2);
 }
 
-===================== */
-/* ===================== طرق الدفع ===================== */
+/* حاوية المربعات */
 .methods{
-  display:grid;                     
-  grid-template-columns:1fr 1fr;    /* 2 مربعات جنب بعض */
-  gap:;                         
-  margin:10px 0;                    
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 مربع جنب بعض */
+  gap:10px;                               /* مسافة بين المربعات */
+  margin:10px 0;
 }
 
 /* المربع لكل طريقة دفع */
 .pay-item{
-  background:linear-gradient(45deg,#000,#8B0000); /* خلفية متدرجة */
-  color:#fff;                                   /* لون النصوص داخل المربع */
-  border:none;                                  /* إزالة الحدود الافتراضية */
-  border-radius:15px;                           /* زوايا مستديرة */
-  padding:0;                                    /* إزالة البادينج عشان الأيقونة تملأ المربع */
-  text-align:center;                            /* محاذاة النصوص للوسط */
-  cursor:pointer;                               /* شكل المؤشر عند المرور */
-  transition:0.3s;                              /* حركة سلسة عند hover */
-  display:flex;                                 /* عرض المحتوى بشكل flex */
-  flex-direction:column;                        /* ترتيب عمودي: أيقونة فوق النص */
-  align-items:center;                           /* محاذاة مركزية أفقي */
-  justify-content:center;                       /* محاذاة مركزية عمودي */
-  height:10px;                                 /* تصغير المربع */
-  overflow:hidden;                              /* منع خروج الصورة */
-}
-
-/* تأثير hover */
-.pay-item:hover{
-  transform:scale(1.05);                        
-  box-shadow:0 0 15px red;                      
-}
-
-/* الأيقونة داخل المربع */
-.pay-item img {
-  width:100%;               /* تمتد كامل عرض المربع */
-  height:100%;              /* تمتد كامل ارتفاع المربع */
-  object-fit:cover;         /* تغطي المربع بالكامل بدون تشويه */
-  margin:8;                 /* إزالة أي مسافة حول الصورة */
-}
-
-/* النص أسفل الأيقونة */
-.pay-item h4{
-  font-size:12px;           /* نص أصغر ليناسب المربع الصغير */
-  margin:2px 0;
-}
-
-.pay-item strong{
-  font-size:12px;           /* نص أصغر */
-  color:#16a34a;
+  height:120px;       /* ارتفاع المربع */
+  width: 150px;       /* ← هنا تصغر العرض */
+  padding:8px;        /* مساحة بسيطة حول النص */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  border-radius:15px;
+  overflow:hidden;
+  background:linear-gradient(45deg,#000,#8B0000);
+  color:#fff;
+  cursor:pointer;
+  transition:0.3s;
 }
 /* ===================== نص الحالة ===================== */
 #payStatus{
