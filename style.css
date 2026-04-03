@@ -352,46 +352,43 @@ input{
 
 /* ===================== طرق الدفع ===================== */
 .methods{
-  display:grid;                     
-  grid-template-columns:1fr 1fr;    
-  gap:12px;                         
-  margin:10px 0;                    
+/* ===================== طرق الدفع ===================== */
+.methods{
+  display:grid;                     /* عرض المربعات بشكل شبكة */
+  grid-template-columns:1fr 1fr;    /* عمودين متساويين */
+  gap:12px;                         /* مسافة بين المربعات */
+  margin:10px 0;                    /* مسافة أعلى وأسفل */
 }
 
 /* المربع لكل طريقة دفع */
 .pay-item{
-  background:linear-gradient(45deg,#000,#8B0000); /* خلفية متدرجة */
+  background:linear-gradient(45deg,#000,#8B0000); /* لون متدرج للخلفية */
+  color:#fff;                                   /* لون النصوص داخل المربع */
+  border:none;                                  /* إزالة الحدود الافتراضية */
   border-radius:15px;                           /* زوايا مستديرة */
-  overflow:hidden;                               /* لمنع خروج الصورة */
-  position:relative;                             /* لجعل الصورة داخل المربع مطلقة */
-  cursor:pointer;
-  height:120px;                                  /* ارتفاع ثابت */
+  padding:0;                                    /* إزالة البادينج عشان الصورة تملأ المربع */
+  text-align:center;                            /* محاذاة النصوص للوسط */
+  cursor:pointer;                               /* شكل المؤشر عند المرور */
+  transition:0.3s;                              /* حركة سلسة عند hover */
+  display:flex;                                 /* عرض المحتوى بشكل flex */
+  flex-direction:column;                        /* ترتيب عمودي: أيقونة فوق النص */
+  align-items:center;                           /* محاذاة مركزية أفقي */
+  justify-content:center;                       /* محاذاة مركزية عمودي */
+  height:90px;                                 /* ارتفاع ثابت للمربع */
 }
 
-/* الأيقونة تغطي المربع بالكامل */
-.pay-item img {
-  position:absolute;    /* تجعل الصورة مطلقة داخل المربع */
-  top:0;
-  left:0;
-  width:100%;           /* تغطي كامل العرض */
-  height:100%;          /* تغطي كامل الارتفاع */
-  object-fit:cover;     /* تغطي المربع بالكامل بدون تشويه */
-}
-
-/* نص طريقة الدفع فوق الصورة */
-.pay-item h4{
-  position:relative;    /* فوق الصورة */
-  z-index:2;            /* فوق الصورة */
-  color:#fff;           /* لون النص */
-  margin:0;
-  text-align:center;
-}
-
-/* حالة hover */
 .pay-item:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 15px red;
+  transform:scale(1.05);                        /* تكبير خفيف عند المرور */
+  box-shadow:0 0 15px red;                      /* ظل عند المرور */
 }
+
+/* الأيقونة داخل المربع */
+.pay-item img {
+  width:100%;                /* تمتد كامل العرض */
+  height:100%;               /* تمتد كامل الارتفاع */
+  object-fit:cover;          /* تغطي المربع بالكامل بدون تشويه */
+  margin:0 10px;                  /* إزالة أي مسافة حول الصورة */
+  }
 /* ===================== نص الحالة ===================== */
 #payStatus{
   font-size:14px;
