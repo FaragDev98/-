@@ -377,11 +377,11 @@ input{
   transform:scale(1.05);
   box-shadow:0 0 15px red;
 }
-
-.pay-item img{
-  width:100%;
-  height:auto;
-  margin-bottom:0px;
+.pay-item img {
+  width: 100%;       /* تمتد كامل العرض */
+  height: 100%;      /* تمتد كامل الارتفاع */
+  object-fit: cover; /* تغطي المربع بدون تشويه */
+  margin-bottom: 0;  /* إزالة الفراغ السفلي */
 }
 
 .pay-item h4{
