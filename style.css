@@ -381,7 +381,7 @@ input{
 .pay-item img{
   width:28px;
   height:28px;
-  margin-bottom:8px;
+  margin-bottom:0px;
 }
 
 .pay-item h4{
